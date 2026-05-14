@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pinja Strand Photo — blogi. Tarinoita kuvauspäiväkirjasta, behind the scenes ja inspiraatiota." />
+  <title>Blogi | Pinja Strand Photo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-top: 56px;
+    }
+    .blog-card {
+      display: flex; flex-direction: column; cursor: pointer;
+      transition: transform var(--t);
+    }
+    .blog-card:hover { transform: translateY(-4px); }
+    .blog-card-img {
+      aspect-ratio: 3/2; overflow: hidden; border-radius: 4px;
+      background: var(--bg3); margin-bottom: 20px;
+    }
+    .blog-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s var(--ease), filter .4s;
+      filter: saturate(.85);
+    }
+    .blog-card:hover .blog-card-img img { transform: scale(1.04); filter: saturate(1); }
+    .blog-card-meta {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+    }
+    .blog-date {
+      font-family: var(--font-label); font-size: .52rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .blog-category {
+      font-family: var(--font-label); font-size: .48rem; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 999px;
+      border: 1px solid var(--rose-border); color: var(--rose);
+    }
+    .blog-title {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.25rem; font-weight: 400; color: var(--ink);
+      line-height: 1.25; margin-bottom: 10px;
+      transition: color var(--t);
+    }
+    .blog-card:hover .blog-title { color: var(--rose); }
+    .blog-excerpt {
+      font-size: .85rem; color: var(--muted); line-height: 1.75;
+      font-weight: 300; flex: 1;
+    }
+    .blog-read-more {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
+      font-family: var(--font-label); font-size: .52rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--rose);
+      border-bottom: 1px solid var(--rose-border); padding-bottom: 3px;
+      transition: border-color var(--t); width: fit-content;
+    }
+    .blog-card:hover .blog-read-more { border-color: var(--rose); }
+    .blog-read-more svg { transition: transform .3s var(--ease); }
+    .blog-card:hover .blog-read-more svg { transform: translateX(3px); }
+
+    .blog-featured {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      align-items: center; padding: 40px; background: var(--bg2);
+      border: 1px solid var(--border); border-radius: 16px; margin-bottom: 56px;
+    }
+    .blog-featured-img {
+      border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;
+    }
+    .blog-featured-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .7s var(--ease); filter: saturate(.9);
+    }
+    .blog-featured:hover .blog-featured-img img { transform: scale(1.03); }
+    .blog-featured-label {
+      font-family: var(--font-label); font-size: .52rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--rose); margin-bottom: 12px;
+    }
+    .blog-featured-title {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.8rem; color: var(--ink); line-height: 1.15; margin-bottom: 14px;
+    }
+    .blog-featured-excerpt {
+      font-size: .9rem; color: var(--muted); line-height: 1.8; font-weight: 300;
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: repeat(2,1fr); }
+      .blog-featured { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">PINJA<span class="sep"> / </span>STRAND</a>
+      <div class="nav-links">
+        <a href="index.html">Etusivu</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="palvelut.html">Palvelut</a>
+        <a href="about.html">Tietoa</a>
+        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="blogi.html" class="active">Blogi</a>
+        <a href="yhteystiedot.html" class="nav-cta">Ota yhteyttä</a>
+      </div>
+      <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu">
+    <a href="index.html">Etusivu</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="palvelut.html">Palvelut</a>
+    <a href="about.html">Tietoa</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+    <a href="blogi.html" class="active">Blogi</a>
+    <a href="yhteystiedot.html" class="mob-cta">Ota yhteyttä</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">Tarinat</div>
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="index.html">Etusivu</a><span class="sep">/</span><span>Blogi</span></div>
+      <h1 class="reveal d1">Tarinoita <span class="hl">kameran takaa.</span></h1>
+      <p class="page-hero-sub reveal d2">Kuvauspäiväkirja, behind the scenes ja inspiraatiota valokuvauksesta.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+
+      <!-- Featured -->
+      <a href="blogi-pohja.html" class="blog-featured reveal" style="text-decoration:none; display:grid;">
+        <div class="blog-featured-img">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&w=900&q=80"
+               alt="Talvihäät"
+               onerror="this.style.background='linear-gradient(135deg,#e8dfd0,#d4c9b8)';this.removeAttribute('src')">
+        </div>
+        <div>
+          <div class="blog-featured-label">— Viimeisin kirjoitus</div>
+          <div class="blog-featured-title">Talvihäät lumisessa<br>metsässä — Emilian ja Mikkon päivä</div>
+          <div style="font-family:var(--font-label);font-size:.52rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">15. tammikuuta 2025 · Häät</div>
+          <p class="blog-featured-excerpt">Olin kuvannut hääjuhlia ennenkin talvella, mutta tämä oli ensimmäinen kerta kun lumi todella teki kaikkensa. Emilia ja Mikko olivat unelmoineet lumisesta hääpäivästä vuosia — ja luonto kuuli heidän toiveensa.</p>
+          <div class="blog-read-more" style="margin-top:20px;">
+            Lue koko tarina
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <div class="section-label reveal">Kaikki kirjoitukset</div>
+
+      <div class="blog-grid">
+
+        <a href="blogi-pohja.html" class="blog-card reveal" style="text-decoration:none;">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&w=600&q=80" alt="Maisema"
+                 onerror="this.style.background='linear-gradient(135deg,#c8d4c0,#b4c4b0)';this.removeAttribute('src')">
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-date">28. marraskuuta 2024</span>
+            <span class="blog-category">Maisema</span>
+          </div>
+          <div class="blog-title">Syysvärien maisemakuvaus — viisi paikkaa Helsingissä</div>
+          <p class="blog-excerpt">Syksy on maisemakuvaajan parasta aikaa. Tässä viisi paikka Helsingin lähellä, jotka ovat kohdallani joka vuosi.</p>
+          <span class="blog-read-more">Lue lisää <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blogi-pohja.html" class="blog-card reveal d1" style="text-decoration:none;">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&w=600&q=80" alt="Muotokuva"
+                 onerror="this.style.background='linear-gradient(135deg,#ddd4c8,#cdc4b8)';this.removeAttribute('src')">
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-date">2. lokakuuta 2024</span>
+            <span class="blog-category">Behind the scenes</span>
+          </div>
+          <div class="blog-title">Mitä tapahtuu perhevalokuvauksen kulissien takana?</div>
+          <p class="blog-excerpt">Asiakkaat usein kysyvät miten saan lapset hymyilemään luonnollisesti. Vastaukseni on yksinkertainen: en yritä.</p>
+          <span class="blog-read-more">Lue lisää <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blogi-pohja.html" class="blog-card reveal d2" style="text-decoration:none;">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&w=600&q=80" alt="Häät"
+                 onerror="this.style.background='linear-gradient(135deg,#e0d4c8,#ccc0b4)';this.removeAttribute('src')">
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-date">14. elokuuta 2024</span>
+            <span class="blog-category">Häät</span>
+          </div>
+          <div class="blog-title">Kesähäät kesämökillä — spontaania ja rakasta</div>
+          <p class="blog-excerpt">Joskus parhaat häät ovat ne, joissa kaikki ei mene suunnitelmien mukaan. Marian ja Teron hääpäivä opetti minulle paljon.</p>
+          <span class="blog-read-more">Lue lisää <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blogi-pohja.html" class="blog-card reveal" style="text-decoration:none;">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&w=600&q=80" alt="Maisema"
+                 onerror="this.style.background='linear-gradient(135deg,#c0ccb8,#adbca4)';this.removeAttribute('src')">
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-date">3. kesäkuuta 2024</span>
+            <span class="blog-category">Inspiraatio</span>
+          </div>
+          <div class="blog-title">Miksi yövalo on maisemakuvaajan paras ystävä</div>
+          <p class="blog-excerpt">Auringonnousu klo 3.30. Herääminen on raskas mutta lopputulos on aina sen arvoinen. Kirjoitan tässä miksi.</p>
+          <span class="blog-read-more">Lue lisää <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blogi-pohja.html" class="blog-card reveal d1" style="text-decoration:none;">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&w=600&q=80" alt="Muotokuva"
+                 onerror="this.style.background='linear-gradient(135deg,#ddd0c8,#c8baa6)';this.removeAttribute('src')">
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-date">22. maaliskuuta 2024</span>
+            <span class="blog-category">Vinkit</span>
+          </div>
+          <div class="blog-title">Kuinka valmistautua muotokuvaukseen — 7 käytännön vinkkiä</div>
+          <p class="blog-excerpt">Vaatetus, meikki, ajankohta — nämä asiat tekevät kuvauksesta miellyttävämmän sekä sinulle että kuvaajalleK.</p>
+          <span class="blog-read-more">Lue lisää <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blogi-pohja.html" class="blog-card reveal d2" style="text-decoration:none;">
+          <div class="blog-card-img">
+            <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&w=600&q=80" alt="Maisema"
+                 onerror="this.style.background='linear-gradient(135deg,#c4d0c0,#b0c0ac)';this.removeAttribute('src')">
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-date">10. tammikuuta 2024</span>
+            <span class="blog-category">Maisema</span>
+          </div>
+          <div class="blog-title">Revontulet Lapissa — kolmen yön valokuvamatka</div>
+          <p class="blog-excerpt">Ensimmäinen kertani Lapissa revontulien äärellä. Matka, joka muutti tapani ajatella valokuvauksesta.</p>
+          <span class="blog-read-more">Lue lisää <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Varataan kuvaus</div>
+        <h2 class="section-h reveal d1">Tehdään <em class="hl">sinusta tarina.</em></h2>
+        <p class="section-p reveal d2">Jokainen kuvaus on oma tarinansa — aloitetaan sinun.</p>
+        <div class="cta-btns reveal d3">
+          <a href="yhteystiedot.html" class="btn-primary">
+            Ota yhteyttä
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="portfolio.html" class="btn-ghost">Katso portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">PINJA<span class="sep"> / </span>STRAND</a>
+          <p>Ammattivalokuvaaja Helsingistä — häät, muotokuvat ja maisemakuvaus koko Suomessa.</p>
+        </div>
+        <div class="footer-col"><h6>Palvelut</h6><ul>
+          <li><a href="palvelut.html">Hääkuvaus</a></li>
+          <li><a href="palvelut.html">Muotokuvaus</a></li>
+          <li><a href="palvelut.html">Maisemakuvaus</a></li>
+          <li><a href="palvelut.html">Fine Art Print</a></li>
+        </ul></div>
+        <div class="footer-col"><h6>Sivut</h6><ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">Tietoa minusta</a></li>
+          <li><a href="blogi.html">Blogi</a></li>
+          <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+        </ul></div>
+        <div class="footer-col"><h6>Yhteystiedot</h6><ul>
+          <li><a href="mailto:pinja@pinjastrand.fi">pinja@pinjastrand.fi</a></li>
+          <li><a href="https://instagram.com/pinjastrandphoto">@pinjastrandphoto</a></li>
+          <li>Helsinki, Suomi</li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <span class="rose">Pinja Strand Photo</span>. Kaikki oikeudet pidätetään.</p>
+        <p>Valokuvaus on rakkaus.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
+    const ham = document.getElementById('ham'), mob = document.getElementById('mobMenu');
+    ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
+    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); }));
+    const ro = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }), {threshold:.08,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>

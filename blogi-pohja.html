@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hääkuvauksen salaisuudet — Pinja Strand kertoo, miten valmistautua parhaaseen mahdolliseen hääkuvaukseen." />
+  <title>Hääkuvauksen salaisuudet | Pinja Strand Photo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Article layout ── */
+    .article-wrap {
+      max-width: 740px; margin: 0 auto;
+    }
+
+    /* Hero image */
+    .article-hero {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      display: block; margin-bottom: 56px;
+      filter: saturate(.88);
+    }
+
+    /* Meta row */
+    .article-meta {
+      display: flex; align-items: center; gap: 18px;
+      flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .article-tag {
+      font-family: var(--font-label); font-size: .52rem;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--rose); border: 1px solid var(--rose-border);
+      border-radius: 999px; padding: 5px 14px;
+    }
+    .article-date {
+      font-family: var(--font-label); font-size: .52rem;
+      letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+    }
+    .article-read {
+      font-family: var(--font-label); font-size: .52rem;
+      letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint);
+    }
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border-warm); flex-shrink: 0; }
+
+    /* Title */
+    .article-title {
+      font-family: var(--font-display); font-style: italic;
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 300;
+      color: var(--ink); line-height: 1.15; letter-spacing: -.5px;
+      margin-bottom: 24px;
+    }
+    .article-title .hl { color: var(--rose); }
+
+    /* Lead */
+    .article-lead {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.2rem; font-weight: 300; color: var(--muted);
+      line-height: 1.7; border-left: 2px solid var(--rose);
+      padding-left: 24px; margin-bottom: 48px;
+    }
+
+    /* Divider */
+    .article-divider {
+      height: 1px; background: var(--border); margin: 48px 0;
+    }
+
+    /* Body text */
+    .article-body h2 {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.7rem; font-weight: 300; color: var(--ink);
+      margin: 48px 0 16px; line-height: 1.2;
+    }
+    .article-body h3 {
+      font-family: var(--font-label); font-size: .58rem;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--rose); margin: 36px 0 12px;
+    }
+    .article-body p {
+      font-family: var(--font-body); font-size: .95rem;
+      color: var(--muted); line-height: 1.85; font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .article-body strong { color: var(--ink); font-weight: 500; }
+    .article-body em { font-family: var(--font-display); font-size: 1.05em; font-style: italic; }
+
+    /* Pull quote */
+    .pull-quote {
+      font-family: var(--font-display); font-style: italic;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 300;
+      color: var(--ink); line-height: 1.35;
+      border-left: 3px solid var(--rose); padding: 4px 0 4px 28px;
+      margin: 40px 0;
+    }
+    .pull-quote .hl { color: var(--rose); }
+
+    /* Inline image */
+    .article-img {
+      width: 100%; aspect-ratio: 3/2; object-fit: cover;
+      display: block; margin: 40px 0;
+      filter: saturate(.88);
+    }
+    .article-img-caption {
+      font-family: var(--font-label); font-size: .5rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--faint); margin-top: -28px; margin-bottom: 40px;
+      padding-left: 2px;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: var(--bg2); border: 1px solid var(--rose-border);
+      border-left: 3px solid var(--rose); border-radius: 10px;
+      padding: 24px 28px; margin: 40px 0;
+    }
+    .tip-box-label {
+      font-family: var(--font-label); font-size: .5rem;
+      letter-spacing: 2.5px; text-transform: uppercase; color: var(--rose);
+      margin-bottom: 10px;
+    }
+    .tip-box p {
+      margin-bottom: 0;
+    }
+
+    /* Numbered list */
+    .article-body ol {
+      padding-left: 0; list-style: none; counter-reset: art;
+      margin-bottom: 20px;
+    }
+    .article-body ol li {
+      counter-increment: art; display: flex; gap: 16px;
+      margin-bottom: 14px; align-items: flex-start;
+    }
+    .article-body ol li::before {
+      content: counter(art, decimal-leading-zero);
+      font-family: var(--font-label); font-size: .5rem;
+      letter-spacing: 1.5px; color: var(--rose); opacity: .7;
+      min-width: 28px; padding-top: 4px; flex-shrink: 0;
+    }
+    .article-body ol li p { margin-bottom: 0; }
+
+    /* Unordered list */
+    .article-body ul {
+      padding-left: 0; list-style: none; margin-bottom: 20px;
+    }
+    .article-body ul li {
+      display: flex; gap: 14px; align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .article-body ul li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--rose); opacity: .6; flex-shrink: 0; margin-top: 9px;
+    }
+    .article-body ul li p { margin-bottom: 0; }
+
+    /* Author card */
+    .author-card {
+      display: flex; align-items: center; gap: 24px;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px 32px; margin-top: 64px;
+    }
+    .author-avatar {
+      width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+      flex-shrink: 0; filter: saturate(.85);
+    }
+    .author-name {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.1rem; color: var(--ink); margin-bottom: 4px;
+    }
+    .author-bio {
+      font-size: .82rem; color: var(--muted); font-weight: 300; line-height: 1.6;
+    }
+
+    /* Related posts */
+    .related-section { margin-top: 80px; }
+    .related-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+      margin-top: 32px;
+    }
+    .related-card { cursor: pointer; }
+    .related-card img {
+      width: 100%; aspect-ratio: 3/2; object-fit: cover;
+      display: block; margin-bottom: 14px; filter: saturate(.88);
+      transition: filter var(--t);
+    }
+    .related-card:hover img { filter: saturate(1); }
+    .related-card-tag {
+      font-family: var(--font-label); font-size: .48rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 8px;
+    }
+    .related-card-title {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1rem; color: var(--ink); line-height: 1.3;
+      transition: color var(--t);
+    }
+    .related-card:hover .related-card-title { color: var(--rose); }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-label); font-size: .52rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color var(--t); margin-bottom: 40px;
+    }
+    .back-link:hover { color: var(--rose); }
+    .back-link svg { transition: transform var(--t); }
+    .back-link:hover svg { transform: translateX(-3px); }
+
+    @media (max-width: 768px) {
+      .related-grid { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">PINJA<span class="sep"> / </span>STRAND</a>
+      <div class="nav-links">
+        <a href="index.html">Etusivu</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="palvelut.html">Palvelut</a>
+        <a href="about.html">Tietoa</a>
+        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="blogi.html" class="active">Blogi</a>
+        <a href="yhteystiedot.html" class="nav-cta">Ota yhteyttä</a>
+      </div>
+      <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu">
+    <a href="index.html">Etusivu</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="palvelut.html">Palvelut</a>
+    <a href="about.html">Tietoa</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+    <a href="blogi.html" class="active">Blogi</a>
+    <a href="yhteystiedot.html" class="mob-cta">Ota yhteyttä</a>
+  </div>
+
+  <!-- ════════════════════════════════════ ARTICLE ════════════════════════════════════ -->
+  <section class="sec" style="padding-top: 120px;">
+    <div class="container">
+      <div class="article-wrap">
+
+        <!-- Back link -->
+        <a href="blogi.html" class="back-link reveal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Takaisin blogiin
+        </a>
+
+        <!-- Hero image -->
+        <img class="article-hero reveal"
+             src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&w=1400&q=80"
+             alt="Hääkuvaus"
+             onerror="this.style.background='linear-gradient(160deg,#e8dfd0,#d4c9b8)';this.removeAttribute('src')">
+
+        <!-- Meta -->
+        <div class="article-meta reveal">
+          <span class="article-tag">Hääkuvaus</span>
+          <span class="meta-dot"></span>
+          <span class="article-date">14. toukokuuta 2025</span>
+          <span class="meta-dot"></span>
+          <span class="article-read">8 min lukuaika</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="article-title reveal">
+          Hääkuvauksen salaisuudet — <em class="hl">miten valmistautua täydelliseen päivään.</em>
+        </h1>
+
+        <!-- Lead -->
+        <p class="article-lead reveal d1">
+          Häät ovat päivä, jonka muistoja kannetaan mukanaan koko elämä. Hyvä valokuvaaja ei vain dokumentoi — hän kertoo tarinan. Tässä kirjoituksessa jaan kaiken, mitä olen oppinut sadoilta hääpäiviltä.
+        </p>
+
+        <div class="article-divider reveal"></div>
+
+        <!-- Body -->
+        <div class="article-body reveal d1">
+
+          <p>
+            Olen kuvannut häitä yli kahdeksan vuotta. Jokaisessa hääparissa on jotain ainutlaatuista — oma energia, oma tarina, oma tapa katsoa toisiaan. Se on juuri se, mikä tekee hääkuvauksesta niin merkityksellistä työtä.
+          </p>
+
+          <p>
+            Mutta hyvä hääkuvaus ei synny itsestään. Se vaatii valmistautumista, luottamusta ja ennen kaikkea — <strong>oikean valokuvaajan</strong>, joka ymmärtää teidän visionne.
+          </p>
+
+          <h2>Miksi aikataulutus on kaiken perusta</h2>
+
+          <p>
+            Yleisin virhe, jonka hääparit tekevät, on aliarvioida aikataulua. Kun on kiire, valokuvaaja ei voi tehdä työtään parhaalla mahdollisella tavalla. Muotokuviin tulisi varata vähintään 60–90 minuuttia, mieluiten ennen juhlaa tai illassa kun valo on kultainen.
+          </p>
+
+          <div class="pull-quote">
+            Paras hääkuva ei synny komennosta — se syntyy <em class="hl">hetkestä.</em>
+          </div>
+
+          <h3>Suositeltu aikataulu</h3>
+
+          <ol>
+            <li><p><strong>Valmistautumiskuvat</strong> — morsiamen ja sulhasen valmistautumiset erikseen, 30–45 min kumpikin.</p></li>
+            <li><p><strong>Ensikohtaaminen (first look)</strong> — valinnainen, mutta antaa rauhallisen hetken ennen seremoniaa.</p></li>
+            <li><p><strong>Seremonia</strong> — dokumentaarinen kuvaus, ei häiritä itse tapahtumaa.</p></li>
+            <li><p><strong>Perhe- ja ryhmäkuvat</strong> — pidä lista valmiina, nopeuttaa huomattavasti.</p></li>
+            <li><p><strong>Parikuvat</strong> — 60–90 min, mieluiten kultaisessa valossa (1–2 h ennen auringonlaskua).</p></li>
+            <li><p><strong>Juhlakuvaus</strong> — tunnelma, yksityiskohdat, spontaanit hetket.</p></li>
+          </ol>
+
+          <img class="article-img"
+               src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&w=1200&q=80"
+               alt="Hääpari kultaisessa valossa"
+               onerror="this.style.background='linear-gradient(160deg,#e8dfd0,#d4c9b8)';this.removeAttribute('src')">
+          <p class="article-img-caption">Kultainen tunti — paras mahdollinen valo parikuville</p>
+
+          <h2>Paikkavalinta — enemmän kuin tausta</h2>
+
+          <p>
+            Taustalla on väliä, mutta ei eniten. Tärkeintä on valo. Suoran auringonpaistteen alla otetut kuvat ovat harvoin kauneimpia — pehmeä varjo, avoin taivas tai heijastunut valo tekevät ihmeitä.
+          </p>
+
+          <p>
+            Kysy valokuvaajaltasi: <em>"Missä on paras valo juuri silloin?"</em> Hyvä valokuvaaja tietää vastauksen.
+          </p>
+
+          <div class="tip-box">
+            <div class="tip-box-label">Vinkki valokuvaajalta</div>
+            <p>Varaa vähintään yksi varavaihtoehto sisätiloissa — Suomen sää on arvaamaton. En ole koskaan pahoillani, kun vaihtoehto on valmiina mielessä jo etukäteen.</p>
+          </div>
+
+          <h2>Luottamus on tärkein tekijä</h2>
+
+          <p>
+            Parhaat häähkuvat syntyvät, kun hääpari unohtaa kameran. Se ei tarkoita, että valokuvaaja on näkymätön — se tarkoittaa, että hääpari <strong>luottaa</strong> valokuvaajaan niin paljon, etteivät he jännitä kameran edessä.
+          </p>
+
+          <p>
+            Tapaan aina hääparit etukäteen — yleensä kahvilla tai lyhyessä tutustumiskuvauksessa. Kyseessä ei ole vain ammatillinen tapaaminen; haluan tuntea teidät, jotta voin kuvata teidät aidosti.
+          </p>
+
+          <h3>Mitä tuoda tapaamiseen</h3>
+
+          <ul>
+            <li><p>Alustavat ajatukset hääpäivän aikataulusta</p></li>
+            <li><p>Inspiraatiokuvia (Pinterest, Instagram) — tyyli, tunnelma, värit</p></li>
+            <li><p>Lista tärkeistä ryhmäkuvista (isovanhemmat, sisarukset jne.)</p></li>
+            <li><p>Kysymykset, joita on mielessä — mikään ei ole liian pieni</p></li>
+          </ul>
+
+          <h2>Jälkityö — odottaminen palkitaan</h2>
+
+          <p>
+            Toimitan editoidut kuvat 4–6 viikon kuluessa hääpäivästä. Tiedän, että odottaminen on vaikeaa — mutta kiireessä tehty editointi näkyy. Jokainen kuva on käsitelty huolella.
+          </p>
+
+          <p>
+            Kuvat toimitetaan yksityisen verkkolinkin kautta, josta ne voi ladata täysresoluutioisina. Lisäksi tarjoan aina mahdollisuuden valita suosikkikuvat painettavaksi tai albumiin.
+          </p>
+
+        </div><!-- /article-body -->
+
+        <!-- Author card -->
+        <div class="author-card reveal">
+          <img class="author-avatar"
+               src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&w=200&q=80"
+               alt="Pinja Strand"
+               onerror="this.style.background='linear-gradient(160deg,#e8dfd0,#d4c9b8)';this.removeAttribute('src')">
+          <div>
+            <div class="author-name">Pinja Strand</div>
+            <p class="author-bio">Ammattivalokuvaaja Helsingistä. Erikoistunut hääkuvaukseen, muotokuvaukseen ja maisemakuvaukseen koko Suomessa. Yli kahdeksan vuoden kokemus hääpäivien ikuistamisesta.</p>
+          </div>
+        </div>
+
+        <!-- Related posts -->
+        <div class="related-section reveal">
+          <div class="section-label">Lue myös</div>
+          <h3 style="font-family:var(--font-display);font-style:italic;font-size:1.5rem;font-weight:300;color:var(--ink);margin:8px 0 0;">
+            Muita <em class="hl">artikkeleita.</em>
+          </h3>
+          <div class="related-grid">
+            <a href="blogi-pohja.html" class="related-card" style="text-decoration:none;">
+              <img src="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&w=600&q=80"
+                   alt="Maisemakuvaus"
+                   onerror="this.style.background='linear-gradient(160deg,#e8dfd0,#d4c9b8)';this.removeAttribute('src')">
+              <div class="related-card-tag">Maisemakuvaus</div>
+              <div class="related-card-title">Parhaat maisemakuvauspaikat Suomessa</div>
+            </a>
+            <a href="blogi-pohja.html" class="related-card" style="text-decoration:none;">
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&w=600&q=80"
+                   alt="Muotokuvaus"
+                   onerror="this.style.background='linear-gradient(160deg,#e8dfd0,#d4c9b8)';this.removeAttribute('src')">
+              <div class="related-card-tag">Muotokuvaus</div>
+              <div class="related-card-title">Kuinka rentoutua muotokuvauksen edessä</div>
+            </a>
+            <a href="blogi-pohja.html" class="related-card" style="text-decoration:none;">
+              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&w=600&q=80"
+                   alt="Fine Art"
+                   onerror="this.style.background='linear-gradient(160deg,#e8dfd0,#d4c9b8)';this.removeAttribute('src')">
+              <div class="related-card-tag">Fine Art</div>
+              <div class="related-card-title">Fine art -tulosteet — miksi ne ovat niin erityisiä</div>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /article-wrap -->
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" style="margin-top: 80px;">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Tehdään yhteistyötä</div>
+        <h2 class="section-h reveal d1">Otetaan <em class="hl">yhteyttä.</em></h2>
+        <p class="section-p reveal d2">Kuulen mielelläni mistä sinä haaveilet.</p>
+        <div class="cta-btns reveal d3">
+          <a href="yhteystiedot.html" class="btn-primary">
+            Ota yhteyttä
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="portfolio.html" class="btn-ghost">Katso portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">PINJA<span class="sep"> / </span>STRAND</a>
+          <p>Ammattivalokuvaaja Helsingistä — häät, muotokuvat ja maisemakuvaus koko Suomessa.</p>
+        </div>
+        <div class="footer-col"><h6>Palvelut</h6><ul>
+          <li><a href="palvelut.html">Hääkuvaus</a></li>
+          <li><a href="palvelut.html">Muotokuvaus</a></li>
+          <li><a href="palvelut.html">Maisemakuvaus</a></li>
+          <li><a href="palvelut.html">Fine Art Print</a></li>
+        </ul></div>
+        <div class="footer-col"><h6>Sivut</h6><ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">Tietoa minusta</a></li>
+          <li><a href="blogi.html">Blogi</a></li>
+          <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+        </ul></div>
+        <div class="footer-col"><h6>Yhteystiedot</h6><ul>
+          <li><a href="mailto:pinja@pinjastrand.fi">pinja@pinjastrand.fi</a></li>
+          <li><a href="https://instagram.com/pinjastrandphoto">@pinjastrandphoto</a></li>
+          <li>Helsinki, Suomi</li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <span class="rose">Pinja Strand Photo</span>. Kaikki oikeudet pidätetään.</p>
+        <p>Valokuvaus on rakkaus.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
+    const ham = document.getElementById('ham'), mob = document.getElementById('mobMenu');
+    ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
+    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); }));
+    const ro = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }), {threshold:.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>
