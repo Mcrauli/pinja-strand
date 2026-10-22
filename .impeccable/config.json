@@ -4,7 +4,9 @@
       "numbered-section-markers",
       "clipped-overflow-container",
       "flat-type-hierarchy",
-      "layout-transition"
+      "layout-transition",
+      "wide-tracking",
+      "hero-eyebrow-chip"
     ],
     "ignoreFiles": [],
     "ignoreValues": [
