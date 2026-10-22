@@ -88,6 +88,15 @@
       writing-mode: vertical-rl;
     }
 
+    .navbar:not(.scrolled) .logo,
+    .navbar:not(.scrolled) .nav-links > a:not(.nav-cta) { color: rgba(250,248,244,.78); }
+    .navbar:not(.scrolled) .nav-links > a:not(.nav-cta):hover,
+    .navbar:not(.scrolled) .nav-links > a:not(.nav-cta).active { color: #faf8f4; }
+    .navbar:not(.scrolled) .nav-links > a:not(.nav-cta)::after { background: #faf8f4; }
+    .navbar:not(.scrolled) .nav-cta { color: #faf8f4 !important; border-color: rgba(250,248,244,.45); }
+    .navbar:not(.scrolled) .hamburger span { background: #faf8f4; }
+    .navbar:not(.scrolled) .logo .sep { color: rgba(224,178,150,.92); }
+
     /* ── Portfolio preview ──────────────────── */
     .preview-header {
       display: flex; align-items: flex-end; justify-content: space-between;
@@ -100,12 +109,7 @@
       position: relative; overflow: hidden; cursor: pointer;
       background: var(--bg3);
     }
-    .preview-item:nth-child(1) { aspect-ratio: 3/4; }
-    .preview-item:nth-child(2) { aspect-ratio: 3/5; }
-    .preview-item:nth-child(3) { aspect-ratio: 3/4; }
-    .preview-item:nth-child(4) { aspect-ratio: 3/5; }
-    .preview-item:nth-child(5) { aspect-ratio: 3/4; }
-    .preview-item:nth-child(6) { aspect-ratio: 3/4; }
+    .preview-item { aspect-ratio: 4/5; }
     .preview-item img {
       width: 100%; height: 100%; object-fit: cover;
       transition: transform .7s var(--ease), filter .5s;
@@ -171,8 +175,6 @@
 
     @media (max-width: 900px) {
       .preview-grid { grid-template-columns: repeat(2,1fr); }
-      .preview-item:nth-child(2),
-      .preview-item:nth-child(4) { aspect-ratio: 3/4; }
     }
     @media (max-width: 768px) {
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -334,7 +336,7 @@
           <div class="stat-label">Kuvattua tilaisuutta</div>
         </div>
         <div class="stat-cell reveal d1">
-          <div class="stat-num">8+</div>
+          <div class="stat-num">5+</div>
           <div class="stat-label">Vuotta kokemusta</div>
         </div>
         <div class="stat-cell reveal d2">
