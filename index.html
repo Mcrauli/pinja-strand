@@ -216,7 +216,7 @@
   </div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" data-nav="index.html">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-grain" aria-hidden="true"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -246,7 +246,7 @@
   <div class="divider"></div>
 
   <!-- PORTFOLIO PREVIEW -->
-  <section class="sec">
+  <section class="sec" data-nav="portfolio.html">
     <div class="container">
       <div class="preview-header">
         <div>
@@ -299,7 +299,7 @@
   <div class="divider"></div>
 
   <!-- ABOUT SNIPPET -->
-  <section class="sec alt">
+  <section class="sec alt" data-nav="about.html">
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap reveal-left">
@@ -346,7 +346,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta-band">
+  <section class="cta-band" data-nav="yhteystiedot.html">
     <div class="container">
       <div class="cta-inner">
         <div class="section-label reveal">Varaa kuvaus</div>
@@ -408,6 +408,12 @@
     mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); }));
     const ro = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }), {threshold:.1,rootMargin:'0px 0px -50px 0px'});
     document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+    const navLinks = document.querySelectorAll('.nav-links > a:not(.nav-cta), .mob-menu a:not(.mob-cta)');
+    const spy = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === e.target.dataset.nav));
+    }), {rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('[data-nav]').forEach(s => spy.observe(s));
     const heroBg = document.getElementById('heroBg');
     if (heroBg) {
       heroBg.style.backgroundImage = "url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&w=2000&q=80')";
