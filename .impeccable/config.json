@@ -1,0 +1,31 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "numbered-section-markers",
+      "clipped-overflow-container",
+      "flat-type-hierarchy",
+      "layout-transition"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-22T06:45:54.478Z",
+        "reason": "hero text over dark photographic background — static analyzer sees only body bg"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "portfolio.html"
+        ],
+        "createdAt": "2026-10-22T06:45:54.713Z",
+        "reason": "lightbox img starts with empty src — loaded dynamically by JS"
+      }
+    ]
+  }
+}

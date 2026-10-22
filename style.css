@@ -60,7 +60,7 @@ button { border:none; background:none; cursor:pointer; font:inherit; color:inher
 .nav-links > a:not(.nav-cta):hover::after,
 .nav-links > a:not(.nav-cta).active::after { width:100%; }
 .nav-cta { padding:9px 20px; border:1px solid var(--rose-border); border-radius:999px; color:var(--rose) !important; font-weight:400; transition:background var(--t),color var(--t),border-color var(--t); }
-.nav-cta:hover { background:var(--rose); color:#fff !important; border-color:var(--rose); }
+.nav-cta:hover { background:var(--rose-hover); color:#fff !important; border-color:var(--rose-hover); }
 
 .hamburger { display:none; flex-direction:column; gap:5px; padding:6px; cursor:pointer; }
 .hamburger span { display:block; width:22px; height:1px; background:var(--ink); transition:var(--t) var(--ease); }
@@ -75,9 +75,9 @@ button { border:none; background:none; cursor:pointer; font:inherit; color:inher
 .mob-menu .mob-cta { margin:20px 5% 0; text-align:center; padding:14px; border:1px solid var(--rose-border); border-radius:999px; color:var(--rose) !important; border-bottom:none; }
 
 /* ── Buttons ─────────────────────────────────────── */
-.btn-primary { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:var(--rose); color:#fff; border-radius:999px; font-family:var(--font-label); font-size:.58rem; letter-spacing:2.5px; text-transform:uppercase; font-weight:400; transition:background var(--t),transform var(--t),box-shadow var(--t); }
+.btn-primary { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:var(--rose-hover); color:#fff; border-radius:999px; font-family:var(--font-label); font-size:.58rem; letter-spacing:2.5px; text-transform:uppercase; font-weight:400; transition:background var(--t),transform var(--t),box-shadow var(--t); }
 .btn-primary svg { transition:transform .3s var(--ease); }
-.btn-primary:hover { background:var(--rose-hover); transform:translateY(-2px); box-shadow:0 12px 32px rgba(176,120,96,.3); }
+.btn-primary:hover { background:#7e5242; transform:translateY(-2px); box-shadow:0 12px 32px rgba(154,102,82,.3); }
 .btn-primary:hover svg { transform:translateX(4px); }
 .btn-ghost { display:inline-flex; align-items:center; gap:10px; padding:15px 30px; border:1px solid var(--border-warm); color:var(--rose); border-radius:999px; font-family:var(--font-label); font-size:.58rem; letter-spacing:2.5px; text-transform:uppercase; font-weight:400; transition:border-color var(--t),background var(--t); }
 .btn-ghost:hover { background:var(--rose-dim); border-color:var(--rose); }
