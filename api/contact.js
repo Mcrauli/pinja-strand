@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const { services } = require("../src/_data/palvelut.json");
+const site = require("../src/_data/site.json");
 
 const MIN_FILL_MS = 3000;
 const SERVICES = [...services.map((s) => s.name), "Muu"];
@@ -109,7 +110,8 @@ module.exports = async function handler(req, res) {
     return fail(400, { error: "Tarkista lomakkeen tiedot.", errors });
   }
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
+  const CONTACT_TO = process.env.CONTACT_TO || site.email;
   const from = process.env.CONTACT_FROM || SMTP_USER;
   if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !CONTACT_TO || !from) {
     return fail(503, { error: "Viestin lähetys ei ole tällä hetkellä käytössä." });
