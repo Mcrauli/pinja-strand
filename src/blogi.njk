@@ -1,0 +1,99 @@
+---
+layout: base.njk
+permalink: /blogi.html
+nav: /blogi.html
+title: Blogi
+pageCss: blogi
+description: Pinja Strand Photo — blogi. Tarinoita kuvauspäiväkirjasta, behind the scenes ja inspiraatiota.
+---
+{%- set posts = collections.posts %}
+{%- set delays = ["", " d1", " d2"] %}
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">Tarinat</div>
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="/index.html">Etusivu</a><span class="sep">/</span><span>Blogi</span></div>
+      <h1 class="reveal d1">Tarinoita <span class="hl">kameran takaa.</span></h1>
+      <p class="page-hero-sub reveal d2">Kuvauspäiväkirja, behind the scenes ja inspiraatiota valokuvauksesta.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      {%- if posts.length %}
+      {%- set latest = posts[0] %}
+
+      <a href="{{ latest.url }}" class="blog-featured reveal" style="text-decoration:none; display:grid;">
+        <div class="blog-featured-img">
+          {%- if latest.data.image %}
+          <img src="{{ latest.data.image }}" alt="" sizes="(max-width:900px) 92vw, 46vw">
+          {%- endif %}
+        </div>
+        <div>
+          <div class="blog-featured-label">— Viimeisin kirjoitus</div>
+          <div class="blog-featured-title">{{ latest.data.title | plain }}</div>
+          <div class="blog-featured-meta">{{ latest.date | fiDate }} · {{ latest.data.category }}</div>
+          <p class="blog-featured-excerpt">{{ latest.data.excerpt }}</p>
+          <div class="blog-read-more" style="margin-top:20px;">
+            Lue koko tarina
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      {%- if posts.length > 1 %}
+      <div class="section-label reveal">Kaikki kirjoitukset</div>
+
+      <div class="blog-grid">
+        {%- for post in posts.slice(1) %}
+
+        <a href="{{ post.url }}" class="blog-card reveal{{ delays[loop.index0 % 3] }}" style="text-decoration:none;">
+          <div class="blog-card-img">
+            {%- if post.data.image %}
+            <img src="{{ post.data.image }}" alt="" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw">
+            {%- endif %}
+          </div>
+          <div class="blog-card-meta">
+            <span class="blog-date">{{ post.date | fiDate }}</span>
+            <span class="blog-category">{{ post.data.category }}</span>
+          </div>
+          <div class="blog-title">{{ post.data.title | plain }}</div>
+          <p class="blog-excerpt">{{ post.data.excerpt }}</p>
+          <span class="blog-read-more">Lue lisää <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+        {%- endfor %}
+
+      </div>
+      {%- endif %}
+      {%- else %}
+
+      <div class="blog-empty reveal">
+        <div class="section-label">Tulossa pian</div>
+        <h2 class="section-h">Ensimmäiset tarinat ovat <em class="hl">tulossa.</em></h2>
+        <p class="section-p">Kirjoitan tänne kuvauksista, vinkeistä ja kulissien takaa. Siihen asti kuvia ja kuulumisia löydät Instagramista.</p>
+        <div class="blog-empty-cta">
+          <a href="https://instagram.com/{{ site.instagram }}" class="btn-ghost">
+            @{{ site.instagram }} Instagramissa
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Varataan kuvaus</div>
+        <h2 class="section-h reveal d1">Tehdään <em class="hl">sinusta tarina.</em></h2>
+        <p class="section-p reveal d2">Jokainen kuvaus on oma tarinansa — aloitetaan sinun.</p>
+        <div class="cta-btns reveal d3">
+          <a href="/yhteystiedot.html" class="btn-primary">
+            Ota yhteyttä
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/portfolio.html" class="btn-ghost">Katso portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>

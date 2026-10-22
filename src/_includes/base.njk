@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {%- set siteUrl = site.url | stripSlash %}
+  {%- set pageDescription = description or "Pinja Strand Photo — ammattivalokuvaaja Järvenpäästä. Häät, muotokuvat ja maisemakuvaus." %}
+  <meta name="description" content="{{ pageDescription }}" />
+  {%- if not site.published %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
+  <title>{% if home %}{{ site.name }}{% else %}{{ title | plain }} | {{ site.name }}{% endif %}</title>
+  <link rel="canonical" href="{{ siteUrl }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:title" content="{% if home %}{{ site.name }}{% else %}{{ title | plain }}{% endif %}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:url" content="{{ siteUrl }}{{ page.url }}">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+{% inlineAssets pageCss, "css" %}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="/index.html" class="logo">PINJA<span class="sep"> / </span>STRAND</a>
+      <div class="nav-links">
+        {%- for item in navigation %}
+        <a href="{{ item.href }}"{% if item.href == nav %} class="active"{% endif %}>{{ item.label }}</a>
+        {%- endfor %}
+        <a href="/yhteystiedot.html" class="nav-cta">Ota yhteyttä</a>
+      </div>
+      <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu">
+    {%- for item in navigation %}
+    <a href="{{ item.href }}"{% if item.href == nav %} class="active"{% endif %}>{{ item.label }}</a>
+    {%- endfor %}
+    <a href="/yhteystiedot.html" class="mob-cta">Ota yhteyttä</a>
+  </div>
+
+{{ content | safe }}
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/index.html" class="logo">PINJA<span class="sep"> / </span>STRAND</a>
+          <p>Ammattivalokuvaaja Järvenpäästä — häät, muotokuvat ja maisemakuvaus Keski-Uudellamaalla ja koko Suomessa.</p>
+        </div>
+        <div class="footer-col"><h6>Palvelut</h6><ul>
+          {%- for s in palvelut.services %}
+          <li><a href="/palvelut.html">{{ s.name }}</a></li>
+          {%- endfor %}
+        </ul></div>
+        <div class="footer-col"><h6>Sivut</h6><ul>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/about.html">Tietoa minusta</a></li>
+          <li><a href="/blogi.html">Blogi</a></li>
+          <li><a href="/yhteystiedot.html">Yhteystiedot</a></li>
+        </ul></div>
+        <div class="footer-col"><h6>Yhteystiedot</h6><ul>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="https://instagram.com/{{ site.instagram }}">@{{ site.instagram }}</a></li>
+          <li>{{ site.person }}{% if site.business.businessId %}, Y-tunnus {{ site.business.businessId }}{% else %}, kevytyrittäjä{% endif %}</li>
+          <li>{{ site.business.billing }}</li>
+          <li>{{ site.business.address }}, Suomi</li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {{ build.year }} <span class="rose">{{ site.name }}</span>. Kaikki oikeudet pidätetään.</p>
+        <nav class="footer-legal" aria-label="Juridiset sivut">
+          <a href="/tietosuoja.html">Tietosuoja</a>
+          <a href="/varausehdot.html">Varausehdot</a>
+        </nav>
+        <p>Valokuvaus on rakkaus.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
+    const ham = document.getElementById('ham'), mob = document.getElementById('mobMenu');
+    ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
+    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); }));
+    const ro = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }), {threshold:.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+    const navLinks = document.querySelectorAll('.nav-links > a:not(.nav-cta), .mob-menu a:not(.mob-cta)');
+    const spy = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === e.target.dataset.nav));
+    }), {rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('[data-nav]').forEach(s => spy.observe(s));
+  </script>
+  {%- if pageJs %}
+  <script>
+{% inlineAssets pageJs, "js" %}
+  </script>
+  {%- endif %}
+</body>
+</html>

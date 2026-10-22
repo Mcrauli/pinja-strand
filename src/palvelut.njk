@@ -1,0 +1,84 @@
+---
+layout: base.njk
+permalink: /palvelut.html
+nav: /palvelut.html
+title: Palvelut
+pageCss: palvelut
+description: Pinja Strand Photo — palvelut ja hinnat. Hääkuvaus, muotokuvaus, maisemakuvaus ja fine art -tulosteet.
+---
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">Palvelut</div>
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="/index.html">Etusivu</a><span class="sep">/</span><span>Palvelut</span></div>
+      <h1 class="reveal d1">Palvelut <span class="hl">&amp; hinnat.</span></h1>
+      <p class="page-hero-sub reveal d2">Räätälöidään juuri sinulle sopiva kokonaisuus: ei ylimääräistä, ei liian vähän.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="section-label reveal">Mitä tarjoan</div>
+      <h2 class="section-h reveal d1" style="max-width:560px;">
+        Jokainen kuvaus on<br><em class="hl">ainutkertainen.</em>
+      </h2>
+      <p class="section-p reveal d2">Hinnat ovat suuntaa-antavia — ota yhteyttä niin räätälöidään sinulle sopiva paketti.</p>
+
+      <div class="services-grid">
+        {%- for s in palvelut.services %}
+
+        <div class="service-card reveal{% if loop.index0 % 2 == 1 %} d1{% endif %}">
+          {%- if s.tag %}
+          <div class="service-tag">{{ s.tag }}</div>
+          {%- endif %}
+          <div class="service-num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div>
+          <div class="service-name">{{ s.name }}</div>
+          <p class="service-desc">{{ s.description }}</p>
+          <ul class="service-includes">
+            {%- for i in s.includes %}
+            <li>{{ i }}</li>
+            {%- endfor %}
+          </ul>
+          <div class="service-price">{{ s.price }}</div>
+          {%- if s.priceNote %}
+          <div class="service-price-note">{{ s.priceNote }}</div>
+          {%- endif %}
+          <div class="service-price-note">{{ site.priceNote }}</div>
+          <a href="/yhteystiedot.html" class="service-cta">
+            Kysy lisää
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        {%- endfor %}
+
+      </div>
+
+      <div class="faq-section">
+        <div class="section-label reveal">Usein kysyttyä</div>
+        <div class="faq-grid">
+          {%- for f in palvelut.faq %}
+          <div class="faq-item reveal{% if loop.index0 % 2 == 1 %} d1{% endif %}">
+            <div class="faq-q">{{ f.q }}</div>
+            <p class="faq-a">{{ f.a }}</p>
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Aloitetaan</div>
+        <h2 class="section-h reveal d1">Varataan <em class="hl">sinulle sopiva aika.</em></h2>
+        <p class="section-p reveal d2">Ei sitovaa — kerro vain mistä olet kiinnostunut.</p>
+        <div class="cta-btns reveal d3">
+          <a href="/yhteystiedot.html" class="btn-primary">
+            Ota yhteyttä
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/portfolio.html" class="btn-ghost">Katso portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>

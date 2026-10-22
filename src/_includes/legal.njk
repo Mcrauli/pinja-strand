@@ -1,0 +1,21 @@
+---
+layout: base.njk
+pageCss: legal
+---
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="/index.html">Etusivu</a><span class="sep">/</span><span>{{ title }}</span></div>
+      <h1 class="reveal d1">{{ title }}</h1>
+      {%- if updated %}
+      <p class="page-hero-sub reveal d2">Päivitetty {{ updated | fiDate }}</p>
+      {%- endif %}
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="legal-body reveal">
+{{ content | safe }}
+      </div>
+    </div>
+  </section>

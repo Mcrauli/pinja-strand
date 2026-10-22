@@ -1,0 +1,305 @@
+media:
+  input: src/images/uploads
+  output: /images/uploads
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+
+content:
+  - name: asetukset
+    label: Asetukset
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - name: name
+        label: Sivuston nimi
+        type: string
+        description: Näkyy selaimen välilehdessä ja alatunnisteessa.
+      - name: person
+        label: Oma nimi
+        type: string
+      - name: email
+        label: Sähköpostiosoite
+        type: string
+        description: Yhteydenottolomakkeen viestit ja sivuston yhteystiedot käyttävät tätä osoitetta.
+      - name: instagram
+        label: Instagram-tunnus
+        type: string
+        description: Kirjoita ilman @-merkkiä, esimerkiksi pinjastrandphoto.
+      - name: location
+        label: Paikkakunta
+        type: string
+      - name: area
+        label: Toiminta-alue
+        type: string
+        description: Esimerkiksi Keski-Uusimaa.
+      - name: url
+        label: Sivuston osoite
+        type: string
+        description: Sivuston oma verkko-osoite ilman loppukauttaviivaa, esimerkiksi https://www.pinjastrand.fi. Päivitä tämä, kun oma verkkotunnus on käytössä.
+      - name: published
+        label: Sivusto on julkinen
+        type: boolean
+        description: Pidä pois päältä, kunnes sivustolla on omat kuvasi ja tekstisi. Silloin hakukoneet eivät löydä sivustoa. Laita päälle vasta, kun sivusto on valmis.
+      - name: priceNote
+        label: Hintojen lisähuomautus
+        type: string
+        description: Näkyy jokaisen hinnan alla Palvelut-sivulla.
+      - name: business
+        label: Yritystiedot
+        type: object
+        fields:
+          - name: businessId
+            label: Y-tunnus
+            type: string
+            description: Jätä tyhjäksi, jos sinulla ei ole Y-tunnusta. Y-tunnus näkyy sivustolla vain, jos se on täytetty.
+          - name: billing
+            label: Laskutustieto
+            type: string
+          - name: address
+            label: Osoite
+            type: string
+            description: Esimerkiksi paikkakunta tai katuosoite.
+
+  - name: etusivu
+    label: Etusivu
+    type: file
+    path: src/_data/etusivu.json
+    format: json
+    fields:
+      - name: heroImage
+        label: Etusivun iso kuva
+        type: image
+        description: Kuva näkyy heti sivun avautuessa. Valitse vaakasuuntainen kuva.
+      - name: heroTitle
+        label: Etusivun pääotsikko
+        type: text
+        description: Rivinvaihto tekee uuden rivin. Laita tähtien väliin *sana*, jos haluat sen eri väriin.
+      - name: genres
+        label: Kuvaustyypit etusivun kuvan alla
+        type: string
+        list: true
+      - name: previewTitle
+        label: Kuvagallerian otsikko
+        type: text
+        description: Tähtien väliin *laitettu sana* tulee eri väriin.
+      - name: aboutImage
+        label: Oma kuva etusivulla
+        type: image
+      - name: aboutImageAlt
+        label: Kuvan kuvaus
+        type: string
+        description: Kuvaile kuva lyhyesti niille, jotka eivät näe sitä.
+      - name: aboutTitle
+        label: Esittelyn otsikko
+        type: text
+        description: Tähtien väliin *laitettu sana* tulee eri väriin.
+      - name: aboutText
+        label: Esittelyteksti
+        type: text
+      - name: quote
+        label: Lainaus
+        type: text
+      - name: stats
+        label: Lukukortit
+        type: object
+        list: true
+        fields:
+          - name: num
+            label: Luku tai sana
+            type: string
+            description: Esimerkiksi 5+
+          - name: label
+            label: Selite
+            type: string
+
+  - name: portfolio
+    label: Portfolio
+    type: file
+    path: src/_data/portfolio.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Kuva
+        type: image
+        required: true
+      - name: alt
+        label: Kuvan kuvaus
+        type: string
+        required: true
+        description: Kuvaile kuva lyhyesti, esimerkiksi Hääpari kävelee järven rannalla. Kuvausta käytetään apuna näkövammaisille kävijöille ja hakukoneille.
+      - name: category
+        label: Luokka
+        type: select
+        required: true
+        options:
+          values:
+            - name: haat
+              label: Häät
+            - name: muotokuva
+              label: Muotokuvat
+            - name: maisema
+              label: Maisema
+      - name: featured
+        label: Näytä etusivulla
+        type: boolean
+        description: Etusivulle tulee ensimmäiset kuusi kuvaa, joissa tämä on valittuna.
+
+  - name: palvelut
+    label: Palvelut
+    type: file
+    path: src/_data/palvelut.json
+    format: json
+    fields:
+      - name: services
+        label: Palvelut
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Palvelun nimi
+            type: string
+            required: true
+          - name: tag
+            label: Korostus
+            type: string
+            description: Valinnainen pieni merkintä kortin päällä, esimerkiksi Suosituin.
+          - name: description
+            label: Kuvaus
+            type: text
+          - name: includes
+            label: Hintaan sisältyy
+            type: string
+            list: true
+          - name: price
+            label: Hinta
+            type: string
+            description: Esimerkiksi alkaen 280 €. Arvonlisäverohuomautus lisätään automaattisesti.
+          - name: priceNote
+            label: Hintaa koskeva huomautus
+            type: string
+      - name: faq
+        label: Usein kysyttyä
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: Kysymys
+            type: string
+          - name: a
+            label: Vastaus
+            type: text
+
+  - name: tietoa
+    label: Tietoa minusta
+    type: file
+    path: src/_data/tietoa.json
+    format: json
+    fields:
+      - name: image
+        label: Kuva sinusta
+        type: image
+      - name: imageAlt
+        label: Kuvan kuvaus
+        type: string
+      - name: intro
+        label: Esittelytekstin kappaleet
+        type: text
+        list: true
+      - name: quote
+        label: Iso lainaus
+        type: text
+        description: Rivinvaihto tekee uuden rivin. Tähtien väliin *laitettu teksti* tulee eri väriin.
+      - name: values
+        label: Arvot
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Arvon nimi
+            type: string
+          - name: text
+            label: Kuvaus
+            type: text
+      - name: gear
+        label: Kalusto
+        type: string
+        list: true
+      - name: gearNote
+        label: Kaluston alla oleva huomautus
+        type: string
+      - name: authorBio
+        label: Lyhyt kuvaus blogiartikkelien lopussa
+        type: text
+
+  - name: blogi
+    label: Blogi
+    type: collection
+    path: src/blogi
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: Otsikko
+        type: string
+        required: true
+        description: Tähtien väliin *laitettu osa* otsikosta tulee artikkelissa eri väriin.
+      - name: date
+        label: Päivämäärä
+        type: date
+        required: true
+      - name: category
+        label: Aihe
+        type: select
+        required: true
+        options:
+          values: [Häät, Muotokuvat, Maisema, Vinkit, Kulissien takana, Inspiraatio]
+      - name: image
+        label: Pääkuva
+        type: image
+      - name: excerpt
+        label: Lyhyt johdanto
+        type: text
+        description: Näkyy blogin listauksessa ja artikkelin alussa.
+      - name: draft
+        label: Luonnos – ei näy sivulla
+        type: boolean
+        description: Ota tämä pois päältä, kun artikkeli on valmis julkaistavaksi.
+      - name: body
+        label: Artikkelin teksti
+        type: rich-text
+
+  - name: tietosuoja
+    label: Tietosuojaseloste
+    type: file
+    path: src/tietosuoja.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Otsikko
+        type: string
+      - name: updated
+        label: Päivitetty
+        type: date
+        description: Päivitä päivämäärä aina, kun muutat tekstiä.
+      - name: body
+        label: Teksti
+        type: rich-text
+
+  - name: varausehdot
+    label: Varausehdot
+    type: file
+    path: src/varausehdot.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Otsikko
+        type: string
+      - name: updated
+        label: Päivitetty
+        type: date
+        description: Päivitä päivämäärä aina, kun muutat tekstiä.
+      - name: body
+        label: Teksti
+        type: rich-text

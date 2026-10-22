@@ -1,0 +1,96 @@
+---
+layout: base.njk
+permalink: /about.html
+nav: /about.html
+title: Tietoa minusta
+pageCss: about
+description: Pinja Strand Photo — tietoa valokuvaajasta. Järvenpääläinen valokuvaaja, joka on rakastunut hetkiin.
+---
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">Tarina</div>
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="/index.html">Etusivu</a><span class="sep">/</span><span>Tietoa minusta</span></div>
+      <h1 class="reveal d1">Kuka <span class="hl">olen.</span></h1>
+      <p class="page-hero-sub reveal d2">Valokuvaaja, unelmoija, hetkien metsästäjä.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="about-hero-grid">
+        <div class="about-hero-img reveal-left">
+          <div class="about-hero-img-accent"></div>
+          <img src="{{ tietoa.image }}" alt="{{ tietoa.imageAlt }}" sizes="(max-width:768px) 92vw, 46vw">
+        </div>
+        <div class="reveal-right">
+          <div class="section-label">Tarina</div>
+          <h2 class="section-h d1">
+            Valokuvaus on<br><em class="hl">rakkaus.</em>
+          </h2>
+          {%- for p in tietoa.intro %}
+          <p class="section-p d{{ loop.index + 1 }}"{% if not loop.first %} style="margin-top:16px;"{% endif %}>
+            {{ p }}
+          </p>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="sec alt">
+    <div class="container" style="text-align:center;">
+      <div class="big-quote reveal">
+        {{ tietoa.quote | hl | safe }}
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="sec">
+    <div class="container">
+      <div class="section-label reveal">Mitä edustan</div>
+      <h2 class="section-h reveal d1">Arvot jotka<br><em class="hl">ohjaavat työtäni.</em></h2>
+
+      <div class="values-grid">
+        {%- for v in tietoa.values %}
+        <div class="value-card reveal{% if loop.index0 > 0 %} d{{ loop.index0 }}{% endif %}">
+          <div class="value-num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div>
+          <div class="value-name">{{ v.name }}</div>
+          <p class="value-desc">{{ v.text }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+
+      <div class="gear-section reveal">
+        <div class="section-label">Kalusto</div>
+        <div class="gear-list">
+          {%- for g in tietoa.gear %}
+          <div class="gear-item"><div class="gear-dot"></div><div class="gear-name">{{ g }}</div></div>
+          {%- endfor %}
+        </div>
+        {%- if tietoa.gearNote %}
+        <p style="font-size:.8rem; color:var(--muted); margin-top:14px; font-style:italic;">* {{ tietoa.gearNote }}</p>
+        {%- endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Tehdään yhteistyötä</div>
+        <h2 class="section-h reveal d1">Otetaan <em class="hl">yhteyttä.</em></h2>
+        <p class="section-p reveal d2">Kuulen mielelläni mistä sinä haaveilet.</p>
+        <div class="cta-btns reveal d3">
+          <a href="/yhteystiedot.html" class="btn-primary">
+            Ota yhteyttä
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/portfolio.html" class="btn-ghost">Katso portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>

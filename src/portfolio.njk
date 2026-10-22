@@ -1,0 +1,80 @@
+---
+layout: base.njk
+permalink: /portfolio.html
+nav: /portfolio.html
+title: Portfolio
+pageCss: portfolio
+pageJs: portfolio
+description: Pinja Strand Photo — portfolio. Häät, muotokuvat ja maisemakuvaus.
+---
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">Portfolio</div>
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="/index.html">Etusivu</a><span class="sep">/</span><span>Portfolio</span></div>
+      <h1 class="reveal d1">Töitä <span class="hl">käytännössä.</span></h1>
+      <p class="page-hero-sub reveal d2">Häät, muotokuvat ja maisema — jokainen kuva on pysäytetty aika.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:48px; flex-wrap:wrap;">
+        <div class="filter-bar" style="margin-bottom:0;">
+          <button class="filter-btn active" data-filter="kaikki">Kaikki</button>
+          {%- for id, c in categories %}
+          {%- if portfolio | where("category", id) | length %}
+          <button class="filter-btn" data-filter="{{ id }}">{{ c.filter }}</button>
+          {%- endif %}
+          {%- endfor %}
+        </div>
+        <div class="gallery-count" id="galleryCount">{{ portfolio | length }} kuvaa</div>
+      </div>
+
+      <div class="gallery-columns" id="gallery">
+        {%- set delays = ["", " d1", " d2"] %}
+        {%- for item in portfolio %}
+
+        <div class="gallery-item reveal{{ delays[loop.index0 % 3] }}" data-category="{{ item.category }}">
+          <img src="{{ item.image }}" alt="{{ item.alt }}" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw">
+          <div class="gallery-item-overlay"><span class="gallery-item-cat">{{ categories[item.category].single }}</span></div>
+          <div class="gallery-zoom"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+        {%- endfor %}
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Haluatko kuvauksen?</div>
+        <h2 class="section-h reveal d1">Aloitetaan <em class="hl">yhdessä.</em></h2>
+        <p class="section-p reveal d2">Kerro unelmakuvauksestasi — vastataan 24 tunnin sisällä.</p>
+        <div class="cta-btns reveal d3">
+          <a href="/yhteystiedot.html" class="btn-primary">
+            Pyydä tarjous
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/palvelut.html" class="btn-ghost">Katso palvelut</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lb-counter" id="lbCounter"></div>
+    <button class="lb-close" id="lbClose" aria-label="Sulje">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Edellinen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Seuraava">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img-wrap"><img id="lbImg" src="" alt="" eleventy:ignore></div>
+      <div class="lightbox-cap" id="lbCap"></div>
+    </div>
+  </div>

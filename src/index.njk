@@ -1,0 +1,130 @@
+---
+layout: base.njk
+permalink: /index.html
+home: true
+nav: /index.html
+pageCss: index
+pageJs: index
+description: Pinja Strand Photo — ammattivalokuvaaja Järvenpäästä. Häät, muotokuvat ja maisemakuvaus. Taiteellinen ja laadukas valokuvaus Keski-Uudellamaalla ja koko Suomessa.
+---
+{%- set featured = (portfolio | where("featured", true)).slice(0, 6) %}
+{%- set delays = ["", " d1", " d2", " d1", " d2", " d3"] %}
+  <section class="hero" data-nav="/index.html">
+    <div class="hero-bg" id="heroBg">
+      <img class="hero-img" src="{{ etusivu.heroImage }}" alt="" eleventy:widths="800,1400,2000" sizes="100vw" loading="eager" fetchpriority="high">
+    </div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-eyebrow">{{ site.person }} · {{ site.location }}</div>
+      <h1 class="hero-h1">
+        {{ etusivu.heroTitle | hl | safe }}
+      </h1>
+      <div class="hero-meta">
+        {%- for g in etusivu.genres %}
+        {%- if not loop.first %}
+        <span class="hero-sep">·</span>
+        {%- endif %}
+        <span class="hero-genre">{{ g }}</span>
+        {%- endfor %}
+      </div>
+      <a href="/portfolio.html" class="hero-cta">
+        Katso portfolio
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <div class="hero-scroll-txt">Scroll</div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="sec" data-nav="/portfolio.html">
+    <div class="container">
+      <div class="preview-header">
+        <div>
+          <div class="section-label reveal">Viimeisimmät työt</div>
+          <h2 class="section-h reveal d1" style="max-width:460px;">
+            {{ etusivu.previewTitle | hl | safe }}
+          </h2>
+        </div>
+        <a href="/portfolio.html" class="btn-ghost reveal d2" style="white-space:nowrap; flex-shrink:0;">
+          Kaikki kuvat
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="preview-grid">
+        {%- for item in featured %}
+        <div class="preview-item reveal{{ delays[loop.index0] }}">
+          <img src="{{ item.image }}" alt="{{ item.alt }}" sizes="(max-width:520px) 92vw, (max-width:900px) 46vw, 31vw">
+          <div class="preview-overlay"><span class="preview-cat">{{ categories[item.category].single }}</span></div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="sec alt" data-nav="/about.html">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal-left">
+          <div class="about-accent"></div>
+          <img src="{{ etusivu.aboutImage }}" alt="{{ etusivu.aboutImageAlt }}" sizes="(max-width:768px) 92vw, 46vw">
+        </div>
+        <div class="reveal-right">
+          <div class="section-label">Tarina</div>
+          <h2 class="section-h d1">
+            {{ etusivu.aboutTitle | hl | safe }}
+          </h2>
+          <p class="section-p d2">
+            {{ etusivu.aboutText }}
+          </p>
+          <div class="about-quote reveal d3">
+            {{ etusivu.quote }}
+          </div>
+          <div style="margin-top:36px;" class="reveal d4">
+            <a href="/about.html" class="btn-ghost">
+              Lue lisää minusta
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-strip">
+        {%- for s in etusivu.stats %}
+        <div class="stat-cell reveal{{ delays[loop.index0] }}">
+          <div class="stat-num">{{ s.num }}</div>
+          <div class="stat-label">{{ s.label }}</div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" data-nav="/yhteystiedot.html">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Varaa kuvaus</div>
+        <h2 class="section-h reveal d1">Aloitetaan <em class="hl">yhdessä.</em></h2>
+        <p class="section-p reveal d2">Kerro unelmakuvauksestasi — vastataan 24 tunnin sisällä.</p>
+        <div class="cta-btns reveal d3">
+          <a href="/yhteystiedot.html" class="btn-primary">
+            Lähetä viesti
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://instagram.com/{{ site.instagram }}" class="btn-ghost">Instagram</a>
+        </div>
+        <div class="cta-contacts reveal d4">
+          <div class="cc-item"><div class="cc-label">Sähköposti</div><a href="mailto:{{ site.email }}" class="cc-val">{{ site.email }}</a></div>
+          <div class="cc-item"><div class="cc-label">Sijainti</div><div class="cc-val" style="cursor:default;">{{ site.location }}</div></div>
+          <div class="cc-item"><div class="cc-label">Instagram</div><a href="https://instagram.com/{{ site.instagram }}" class="cc-val">@{{ site.instagram }}</a></div>
+        </div>
+      </div>
+    </div>
+  </section>

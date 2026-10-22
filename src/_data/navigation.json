@@ -1,0 +1,8 @@
+[
+  { "href": "/index.html", "label": "Etusivu" },
+  { "href": "/portfolio.html", "label": "Portfolio" },
+  { "href": "/about.html", "label": "Tietoa" },
+  { "href": "/yhteystiedot.html", "label": "Yhteystiedot" },
+  { "href": "/palvelut.html", "label": "Palvelut" },
+  { "href": "/blogi.html", "label": "Blogi" }
+]

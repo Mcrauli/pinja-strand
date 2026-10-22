@@ -1,0 +1,24 @@
+.legal-body { max-width: 740px; margin: 0 auto; }
+.legal-body h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1.7rem; font-weight: 300; color: var(--ink);
+  margin: 56px 0 16px; line-height: 1.2;
+}
+.legal-body h2:first-child { margin-top: 0; }
+.legal-body h3 {
+  font-family: var(--font-label); font-size: .58rem; font-weight: 400;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--rose); margin: 32px 0 12px;
+}
+.legal-body p, .legal-body li {
+  font-size: .95rem; color: var(--muted); line-height: 1.85; font-weight: 300;
+}
+.legal-body p { margin-bottom: 20px; }
+.legal-body strong { color: var(--ink); font-weight: 500; }
+.legal-body a { color: var(--rose-hover); border-bottom: 1px solid var(--rose-border); }
+.legal-body ul { list-style: none; margin-bottom: 20px; }
+.legal-body ul li { position: relative; padding-left: 19px; margin-bottom: 10px; }
+.legal-body ul li::before {
+  content: ''; position: absolute; left: 0; top: 11px; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--rose); opacity: .6;
+}

@@ -1,0 +1,158 @@
+---
+layout: base.njk
+permalink: /yhteystiedot.html
+nav: /yhteystiedot.html
+title: Yhteystiedot
+pageCss: yhteystiedot
+pageJs: yhteystiedot
+description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta tai tarjouspyyntöä varten. Järvenpää, Keski-Uusimaa.
+---
+  <section class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">Hei</div>
+    <div class="container">
+      <div class="breadcrumb reveal"><a href="/index.html">Etusivu</a><span class="sep">/</span><span>Yhteystiedot</span></div>
+      <h1 class="reveal d1">Otetaan <span class="hl">yhteyttä.</span></h1>
+      <p class="page-hero-sub reveal d2">Kerro unelmistasi — vastaan 24 tunnin sisällä.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="reveal">
+          <div class="section-label">Lähetä viesti</div>
+          <h2 class="section-h d1" style="max-width:100%; margin-bottom:32px;">
+            Aloitetaan <em class="hl">juttelemalla.</em>
+          </h2>
+
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+          <form class="contact-form-wrap" id="contactForm" action="/api/contact" method="post" data-email="{{ site.email }}">
+            <div class="form-group">
+              <label class="form-label" for="nimi">Nimesi <span class="req" aria-hidden="true">*</span></label>
+              <input class="form-input" type="text" id="nimi" name="nimi" placeholder="Etunimi Sukunimi" autocomplete="name" required aria-describedby="err-nimi">
+              <p class="form-error" id="err-nimi"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Sähköposti <span class="req" aria-hidden="true">*</span></label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="sinä@esimerkki.fi" autocomplete="email" required aria-describedby="err-email">
+              <p class="form-error" id="err-email"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="puhelin">Puhelin</label>
+              <input class="form-input" type="tel" id="puhelin" name="puhelin" placeholder="Valinnainen" autocomplete="tel" aria-describedby="err-puhelin">
+              <p class="form-error" id="err-puhelin"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="palvelu">Mistä olet kiinnostunut?</label>
+              <select class="form-select" id="palvelu" name="palvelu" aria-describedby="err-palvelu">
+                <option value="">Valitse palvelu...</option>
+                {%- for s in palvelut.services %}
+                <option value="{{ s.name }}">{{ s.name }}</option>
+                {%- endfor %}
+                <option value="Muu">Muu</option>
+              </select>
+              <p class="form-error" id="err-palvelu"></p>
+            </div>
+            <div class="form-pair">
+              <div class="form-group">
+                <label class="form-label" for="paivamaara">Toivottu päivämäärä</label>
+                <input class="form-input" type="date" id="paivamaara" name="paivamaara" aria-describedby="err-paivamaara">
+                <p class="form-error" id="err-paivamaara"></p>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="paikka">Kuvauspaikka</label>
+                <input class="form-input" type="text" id="paikka" name="paikka" placeholder="Kaupunki tai paikka" autocomplete="off" aria-describedby="err-paikka">
+                <p class="form-error" id="err-paikka"></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="viesti">Viesti <span class="req" aria-hidden="true">*</span></label>
+              <textarea class="form-textarea" id="viesti" name="viesti" placeholder="Kerro lyhyesti — milloin, missä, millaista tunnelmaa haet..." minlength="10" maxlength="5000" required aria-describedby="err-viesti"></textarea>
+              <p class="form-error" id="err-viesti"></p>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label>Jätä tämä kenttä tyhjäksi <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <input type="hidden" name="t" id="formT" value="">
+            <button type="submit" class="form-submit">Lähetä viesti</button>
+            <p class="form-privacy">Käytän tietojasi vain yhteydenottoosi vastaamiseen. <a href="/tietosuoja.html">Tietosuojaseloste</a></p>
+            <p class="response-note">Vastataan 24 tunnin sisällä</p>
+          </form>
+
+          <div class="form-thanks" id="formThanks" tabindex="-1" hidden>
+            <div class="form-thanks-ico">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div class="form-thanks-title">Kiitos, viestisi on <em class="hl">perillä.</em></div>
+            <p>Vastaan 24 tunnin sisällä.</p>
+          </div>
+        </div>
+
+        <div class="reveal d1">
+          <div class="section-label">Yhteystiedot</div>
+          <div class="contact-info-card" style="margin-top:24px;">
+            <div class="contact-row">
+              <div class="contact-ico">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Yhteyshenkilö</div>
+                <div class="contact-row-val" style="cursor:default;">{{ site.person }}</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Sähköposti</div>
+                <a href="mailto:{{ site.email }}" class="contact-row-val">{{ site.email }}</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Sijainti</div>
+                <div class="contact-row-val" style="cursor:default;">{{ site.location }}, {{ site.area }}</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Vasteaika</div>
+                <div class="contact-row-val" style="cursor:default;">24 tunnin sisällä</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-ico">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Yritystiedot</div>
+                <div class="contact-row-val contact-row-lines" style="cursor:default;">
+                  <span>{{ site.person }}{% if site.business.businessId %}, Y-tunnus {{ site.business.businessId }}{% else %}, kevytyrittäjä{% endif %}</span>
+                  <span>{{ site.business.billing }}</span>
+                  <span>{{ site.business.address }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener" class="insta-block" style="margin-top:20px; text-decoration:none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <div class="insta-block-text">
+              <strong>@{{ site.instagram }}</strong>
+              <span>Seuraa Instagramissa — päivittäin uusia kuvia</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>

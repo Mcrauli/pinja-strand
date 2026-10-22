@@ -1,0 +1,19 @@
+{
+  "name": "pinja-strand",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "@11ty/eleventy-img": "^7.1.1"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "nodemailer": "^10.2.0"
+  }
+}

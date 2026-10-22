@@ -1,0 +1,5 @@
+{
+  "haat": { "filter": "Häät", "single": "Häät" },
+  "muotokuva": { "filter": "Muotokuvat", "single": "Muotokuva" },
+  "maisema": { "filter": "Maisema", "single": "Maisema" }
+}
