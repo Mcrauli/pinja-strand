@@ -1,7 +1,7 @@
 {
   "name": "Pinja Strand Photo",
   "person": "Pinja Strand",
-  "email": "pinja@pinjastrand.fi",
+  "email": "pinjastrandphoto@gmail.com",
   "instagram": "pinjastrandphoto",
   "location": "Järvenpää",
   "area": "Keski-Uusimaa",
@@ -9,7 +9,6 @@
   "published": false,
   "priceNote": "Hinnat sisältävät arvonlisäveron.",
   "business": {
-    "businessId": "",
     "billing": "Laskutus UKKO.fi-laskutuspalvelun kautta",
     "address": "Järvenpää"
   }
