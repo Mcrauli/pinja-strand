@@ -9,8 +9,8 @@
   cursor: pointer; transition: all var(--t);
   background: none;
 }
-.filter-btn:hover { border-color: var(--rose-border); color: var(--rose); }
-.filter-btn.active { background: var(--rose); border-color: var(--rose); color: #fff; }
+.filter-btn:hover { border-color: var(--rose-border); color:var(--rose-text); }
+.filter-btn.active { background: var(--rose-hover); border-color: var(--rose-hover); color: #fff; }
 
 .gallery-columns {
   columns: 3; column-gap: 4px;
@@ -69,7 +69,7 @@
 .lightbox-inner { position: relative; max-width: min(1100px,90vw); }
 .lightbox-img-wrap { border-radius: 4px; overflow: hidden; max-height: 85vh; }
 .lightbox-img-wrap img { max-height: 85vh; max-width: min(1100px,88vw); object-fit: contain; display: block; }
-.lightbox-cap { font-family: var(--font-label); font-size: .69rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,248,244,.35); text-align: center; margin-top: 14px; }
+.lightbox-cap { font-family: var(--font-label); font-size: .69rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,248,244,.62); text-align: center; margin-top: 14px; }
 .lb-close {
   position: fixed; top: 20px; right: 24px;
   width: 40px; height: 40px; background: rgba(250,248,244,.06);
@@ -94,7 +94,7 @@
 .lb-counter {
   position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
   font-family: var(--font-label); font-size: .69rem; letter-spacing: 2px;
-  color: rgba(250,248,244,.3); text-transform: uppercase;
+  color: rgba(250,248,244,.55); text-transform: uppercase;
 }
 
 @media (max-width: 900px) { .gallery-columns { columns: 2; } }

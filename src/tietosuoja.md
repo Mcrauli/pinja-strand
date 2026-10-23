@@ -1,8 +1,8 @@
 ---
 title: Tietosuojaseloste
-updated: 2026-10-22
+updated: 2026-10-23
 ---
-Tämä on EU:n yleisen tietosuoja-asetuksen (GDPR) 13 artiklan mukainen tietosuojaseloste. Siinä kerrotaan, mitä henkilötietoja kerään, miksi ja miten niitä käsitellään.
+Tässä tietosuojaselosteessa kerron, mitä henkilötietoja käsittelen, mihin niitä käytetään ja mitä oikeuksia sinulla on. Seloste on laadittu EU:n yleisen tietosuoja-asetuksen (GDPR) 13 artiklan mukaisesti.
 
 ## Rekisterinpitäjä
 
@@ -10,64 +10,69 @@ Tämä on EU:n yleisen tietosuoja-asetuksen (GDPR) 13 artiklan mukainen tietosuo
 {{ site.business.address }}  
 Sähköposti: [{{ site.email }}](mailto:{{ site.email }})
 
-Tietosuoja-asioissa voit ottaa yhteyttä yllä olevaan sähköpostiosoitteeseen.
+Kaikissa tietosuojaan liittyvissä asioissa voit ottaa yhteyttä yllä olevaan sähköpostiosoitteeseen.
 
-## Mitä tietoja kerään
+## Mitä tietoja käsittelen
 
-- **Yhteydenottolomake:** nimi, sähköpostiosoite, puhelinnumero (valinnainen), kiinnostava palvelu, toivottu päivämäärä, kuvauspaikka ja viesti.
-- **Asiakkuus:** sopimus- ja kuvaustiedot, kuten yhteystiedot, kuvauksen ajankohta ja paikka sekä sovitut tiedot kuvauksen sisällöstä.
-- **Valokuvat:** kuvauksissa otetut valokuvat, joissa asiakas tai muu henkilö voi esiintyä.
+- **Yhteydenotot:** nimi, sähköpostiosoite, puhelinnumero (jos annat sen), kiinnostava palvelu, toivottu päivämäärä, kuvauspaikka ja viestisi sisältö.
+- **Asiakkuus:** yhteystiedot, kuvauksen ajankohta ja paikka sekä kuvauksesta sovitut asiat.
+- **Valokuvat:** kuvauksissa otetut kuvat, joissa sinä tai muut henkilöt, esimerkiksi hääjuhlan vieraat, voitte esiintyä.
 
 ## Käyttötarkoitukset ja oikeusperusteet
 
-- **Sopimus ja sopimusta edeltävät toimet (GDPR 6.1 b):** tarjouspyyntöihin vastaaminen, kuvauksen sopiminen ja toteuttaminen sekä kuvien toimittaminen.
-- **Oikeutettu etu (GDPR 6.1 f):** yhteydenottoihin vastaaminen. Oikeutettu etuni on voida vastata sinulle, kun otat minuun yhteyttä.
-- **Lakisääteiset velvoitteet (GDPR 6.1 c):** laskutus ja kirjanpito. Laskutus hoidetaan UKKO.fi-laskutuspalvelun kautta. UKKO.fi toimii laskutustietojen osalta itsenäisenä rekisterinpitäjänä, ja se käsittelee laskutustietoja oman tietosuojaselosteensa mukaisesti.
-- **Suostumus (GDPR 6.1 a):** kuvien julkaiseminen portfoliossa, verkkosivuilla tai sosiaalisessa mediassa. Julkaisen kuvia vain erillisellä suostumuksellasi, ja voit peruuttaa suostumuksen milloin tahansa.
+- **Sopimus ja sitä edeltävät toimet (GDPR 6 art. 1 b):** tarjouspyyntöihin vastaaminen, kuvauksesta sopiminen, kuvauksen toteuttaminen ja kuvien toimittaminen.
+- **Oikeutettu etu (GDPR 6 art. 1 f):** yhteydenottoihin vastaaminen sekä tilaisuuden vieraiden kuvaaminen asiakkaan tilaaman kuvauksen yhteydessä. Oikeutettu etu on voida vastata yhteydenottoihin ja toteuttaa asiakkaan tilaama tilaisuuden dokumentointi.
+- **Lakisääteiset velvoitteet (GDPR 6 art. 1 c):** laskutus ja kirjanpito. Laskutus hoidetaan UKKO.fi-laskutuspalvelun kautta. UKKO.fi on laskutustietojen osalta itsenäinen rekisterinpitäjä ja käsittelee niitä oman tietosuojaselosteensa mukaisesti.
+- **Suostumus (GDPR 6 art. 1 a):** kuvien julkaiseminen portfoliossa, verkkosivuilla tai sosiaalisessa mediassa. Julkaisen kuvia vain erillisellä suostumuksellasi, ja voit peruuttaa suostumuksen milloin tahansa. Peruutus ei vaikuta ennen sitä tehdyn käsittelyn lainmukaisuuteen.
+
+Tietojen antaminen on vapaaehtoista. Ilman yhteystietoja en kuitenkaan voi vastata yhteydenottoosi tai toteuttaa kuvausta.
+
+Tietoja ei käytetä automaattiseen päätöksentekoon eikä profilointiin.
 
 ## Säilytysajat
 
-- Yhteydenotot, joista ei synny tilausta, poistetaan 12 kuukauden kuluessa.
-- Asiakastiedot säilytetään sopimuksen ajan. Laskutus- ja kirjanpitotiedot säilytetään kirjanpitolain vaatimat ajat laskutuspalvelussa.
-- Valokuvat säilytetään sovitun ajan.
+- Yhteydenotot, joista ei synny tilausta, poistan viimeistään 12 kuukauden kuluttua.
+- Asiakastietoja säilytän asiakkuuden ajan ja sen jälkeen niin kauan kuin se on tarpeen mahdollisten reklamaatioiden hoitamiseksi.
+- Laskutus- ja kirjanpitotietoja säilytetään laskutuspalvelussa kirjanpitolain edellyttämän ajan.
+- Valokuvia säilytän asiakkaan kanssa sovitun ajan.
 
 ## Vastaanottajat ja henkilötietojen käsittelijät
 
-Henkilötietoja voivat käsitellä seuraavat palveluntarjoajat:
+Käytän seuraavia palveluita, joiden kautta henkilötietoja voidaan käsitellä:
 
-- sähköpostipalvelun tarjoaja, jonka kautta yhteydenotot ja asiakasviestintä kulkevat
-- sivuston ylläpitopalvelu Vercel Inc., joka ylläpitää verkkosivustoa ja välittää yhteydenottolomakkeen tiedot
+- Google (Gmail), sähköpostipalvelu, jonka kautta yhteydenotot ja asiakasviestintä kulkevat
+- Vercel Inc., sivuston ylläpitopalvelu, joka välittää yhteydenottolomakkeen tiedot sähköpostiini
 - kuvagalleriapalvelu, jonka kautta valmiit kuvat toimitetaan asiakkaalle
 - UKKO.fi-laskutuspalvelu laskutusta varten
 
-En myy enkä luovuta henkilötietoja muille markkinointitarkoituksiin.
+En myy enkä luovuta henkilötietoja kenellekään markkinointitarkoituksiin.
 
 ## Siirrot EU:n ja ETA:n ulkopuolelle
 
-Sivuston ylläpitäjä Vercel Inc. sijaitsee Yhdysvalloissa. Siirrot perustuvat EU:n ja Yhdysvaltojen väliseen tietosuojakehykseen (EU–US Data Privacy Framework) tai tarvittaessa EU:n komission hyväksymiin vakiolausekkeisiin.
+Google ja Vercel ovat yhdysvaltalaisia yrityksiä, ja tietoja voidaan siksi käsitellä myös Yhdysvalloissa. Siirrot perustuvat EU:n ja Yhdysvaltojen väliseen tietosuojakehykseen (EU–US Data Privacy Framework) tai Euroopan komission hyväksymiin vakiosopimuslausekkeisiin.
 
 ## Yhteydenottolomake
 
-Lomakkeelle täyttämiäsi tietoja ei tallenneta verkkosivustolle. Ne välitetään minulle vain sähköpostiviestinä.
+Lomakkeelle kirjoittamiasi tietoja ei tallenneta verkkosivustolle. Ne välitetään minulle sähköpostiviestinä.
 
 ## Evästeet
 
-Sivusto ei käytä evästeitä eikä analytiikka- tai seurantatyökaluja.
+Sivusto ei käytä evästeitä eikä analytiikka- tai seurantatyökaluja. Fontit ja kuvat ladataan sivuston omalta palvelimelta.
 
 ## Sinun oikeutesi
 
-Sinulla on oikeus:
+Sinulla on oikeus
 
-- tarkastaa itsestäsi keräämäni tiedot
-- vaatia virheellisten tietojen oikaisemista
+- saada tietää, mitä tietoja sinusta käsittelen, ja saada niistä kopio
+- vaatia virheellisten tietojen korjaamista
 - vaatia tietojesi poistamista
 - vaatia käsittelyn rajoittamista
-- vastustaa käsittelyä
-- saada antamasi tiedot siirrettävässä muodossa
-- peruuttaa antamasi suostumus milloin tahansa
+- vastustaa oikeutettuun etuun perustuvaa käsittelyä
+- saada antamasi tiedot koneluettavassa muodossa
+- peruuttaa antamasi suostumus milloin tahansa.
 
-Voit käyttää oikeuksiasi ottamalla yhteyttä osoitteeseen [{{ site.email }}](mailto:{{ site.email }}).
+Voit käyttää oikeuksiasi lähettämällä viestin osoitteeseen [{{ site.email }}](mailto:{{ site.email }}). Vastaan pyyntöösi viimeistään kuukauden kuluessa.
 
 ## Valitusoikeus
 
-Jos katsot, että henkilötietojasi käsitellään lainvastaisesti, sinulla on oikeus tehdä valitus valvontaviranomaiselle. Suomessa valvontaviranomainen on Tietosuojavaltuutetun toimisto, [tietosuoja.fi](https://tietosuoja.fi).
+Jos katsot, että henkilötietojasi käsitellään lainvastaisesti, voit tehdä valituksen valvontaviranomaiselle. Suomessa valvontaviranomainen on tietosuojavaltuutetun toimisto ([tietosuoja.fi](https://tietosuoja.fi)).

@@ -20,13 +20,13 @@
   display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
 }
 .blog-date {
-  font-family: var(--font-label); font-size: .52rem; letter-spacing: 2px;
+  font-family: var(--font-label); font-size:.69rem; letter-spacing: 2px;
   text-transform: uppercase; color: var(--muted);
 }
 .blog-category {
-  font-family: var(--font-label); font-size: .48rem; letter-spacing: 1.5px;
+  font-family: var(--font-label); font-size:.69rem; letter-spacing: 1.5px;
   text-transform: uppercase; padding: 3px 10px; border-radius: 999px;
-  border: 1px solid var(--rose-border); color: var(--rose);
+  border: 1px solid var(--rose-border); color:var(--rose-text);
 }
 .blog-title {
   font-family: var(--font-display); font-style: italic;
@@ -34,19 +34,19 @@
   line-height: 1.25; margin-bottom: 10px;
   transition: color var(--t);
 }
-.blog-card:hover .blog-title { color: var(--rose); }
+.blog-card:hover .blog-title { color:var(--rose-text); }
 .blog-excerpt {
   font-size: .85rem; color: var(--muted); line-height: 1.75;
   font-weight: 300; flex: 1;
 }
 .blog-read-more {
   display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
-  font-family: var(--font-label); font-size: .52rem; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--rose);
+  font-family: var(--font-label); font-size:.69rem; letter-spacing: 2px;
+  text-transform: uppercase; color:var(--rose-text);
   border-bottom: 1px solid var(--rose-border); padding-bottom: 3px;
   transition: border-color var(--t); width: fit-content;
 }
-.blog-card:hover .blog-read-more { border-color: var(--rose); }
+.blog-card:hover .blog-read-more { border-color:var(--rose-text); }
 .blog-read-more svg { transition: transform .3s var(--ease); }
 .blog-card:hover .blog-read-more svg { transform: translateX(3px); }
 
@@ -64,8 +64,8 @@
 }
 .blog-featured:hover .blog-featured-img img { transform: scale(1.03); }
 .blog-featured-label {
-  font-family: var(--font-label); font-size: .52rem; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--rose); margin-bottom: 12px;
+  font-family: var(--font-label); font-size:.69rem; letter-spacing: 2px;
+  text-transform: uppercase; color:var(--rose-text); margin-bottom: 12px;
 }
 .blog-featured-title {
   font-family: var(--font-display); font-style: italic;

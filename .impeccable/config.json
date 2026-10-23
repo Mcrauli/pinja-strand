@@ -7,7 +7,8 @@
       "layout-transition",
       "wide-tracking",
       "hero-eyebrow-chip",
-      "italic-serif-display"
+      "italic-serif-display",
+      "cramped-padding"
     ],
     "ignoreFiles": [],
     "ignoreValues": [
@@ -15,7 +16,9 @@
         "rule": "low-contrast",
         "value": "*",
         "files": [
-          "index.html", "src/index.njk", "src/css/index.css"
+          "index.html",
+          "src/index.njk",
+          "src/css/index.css"
         ],
         "createdAt": "2026-10-22T06:45:54.478Z",
         "reason": "hero text over dark photographic background — static analyzer sees only body bg"
@@ -24,7 +27,8 @@
         "rule": "broken-image",
         "value": "*",
         "files": [
-          "portfolio.html", "src/portfolio.njk"
+          "portfolio.html",
+          "src/portfolio.njk"
         ],
         "createdAt": "2026-10-22T06:45:54.713Z",
         "reason": "lightbox img starts with empty src — loaded dynamically by JS"

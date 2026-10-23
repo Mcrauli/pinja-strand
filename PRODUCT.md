@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML/CSS/JS — no framework, no build step, deployed as-is.
+Eleventy 3 static site (src → _site) on Vercel; content edited in Pages CMS (.pages.yml); contact form is a Vercel function (api/contact.js, SMTP).
 
 ## Users
 
@@ -32,7 +32,8 @@ Kävijä selaa mobiilissa tai desktopilla ennen ostopäätöstä. Yhteyskanava o
 - Sijainti: Järvenpää, Keski-Uusimaa; kuvaukset koko Suomessa
 - Kokemus: yli 5 vuotta
 - Kalusto: Sony A7 IV, 35mm/85mm/24-70mm f/1.4-2.8 GM, DJI Mini 4 Pro
-- Ei julkaistua puhelinnumeroa; vasteaika 24h sähköpostilla
+- Ei julkaistua puhelinnumeroa; vastaa yleensä vuorokauden sisällä sähköpostitse
+- Kevytyrittäjä ilman Y-tunnusta, laskutus UKKO.fi; ei varaus- eikä ennakkomaksuja
 - Instagram: @pinjastrandphoto
 
 ## Brand Commitments

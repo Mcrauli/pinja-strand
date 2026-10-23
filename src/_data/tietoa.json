@@ -2,24 +2,33 @@
   "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&w=1400&q=80",
   "imageAlt": "Pinja Strand",
   "intro": [
-    "Olen Pinja — järvenpääläinen valokuvaaja, joka on rakastunut hetkiin. Se saattaa kuulostaa kliseeltä, mutta se on totta: uskon, että jokaisessa päivässä on useita täydellisiä hetkiä, jotka menevät ohi huomaamatta.",
-    "Kamerani tehtävä on pysäyttää ne. Häissä, perheessä, luonnossa: kaikkialla on hetkiä, jotka ansaitsevat tulla ikuistetuksi.",
-    "Olen kuvannut yli 5 vuotta. Lähestymistapani on hienovarainen: en ohjaa liikaa, vaan annan tilanteen elää. Parhaat kuvat syntyvät kun kohde unohtaa kameran."
+    "Olen Pinja, järvenpääläinen valokuvaaja, joka on rakastunut hetkiin. Se voi kuulostaa kliseeltä, mutta se on totta: uskon, että jokaisessa päivässä on monta täydellistä hetkeä, jotka menevät ohi huomaamatta.",
+    "Kamerani tehtävä on pysäyttää ne. Häissä, perheen kanssa ja luonnossa on kaikkialla hetkiä, jotka ansaitsevat tulla ikuistetuiksi.",
+    "Olen kuvannut yli viisi vuotta. Lähestymistapani on hienovarainen: en ohjaa liikaa vaan annan tilanteen elää. Parhaat kuvat syntyvät, kun kuvattava unohtaa kameran."
   ],
   "quote": "Paras valokuva ei ole teknisesti täydellinen —\nse on *emotionaalisesti tosi.*",
   "values": [
-    { "name": "Aitous", "text": "En rakenna tilanteita, vaan dokumentoin niitä. Aidot tunteet ja hetket ovat aina kauniimpia kuin lavastukset." },
-    { "name": "Kärsivällisyys", "text": "Täydellinen hetki ei tapahdu komennolla. Odotan, seuraan, ja otan kuvan juuri oikealla hetkellä." },
-    { "name": "Laatu", "text": "Toimitan vain kuvat, joihin itse olen tyytyväinen. Ei kompromisseja — jokainen kuva on harkittu." }
+    {
+      "name": "Aitous",
+      "text": "En rakenna tilanteita, vaan dokumentoin niitä. Aidot tunteet ja hetket ovat aina kauniimpia kuin lavastukset."
+    },
+    {
+      "name": "Kärsivällisyys",
+      "text": "Täydellinen hetki ei synny käskystä. Odotan, seuraan ja otan kuvan juuri oikealla hetkellä."
+    },
+    {
+      "name": "Laatu",
+      "text": "Toimitan vain kuvia, joihin olen itse tyytyväinen. Jokainen kuva on harkittu."
+    }
   ],
   "gear": [
-    "Sony A7 IV — pääkamera",
-    "Sony 35mm f/1.4 GM",
-    "Sony 85mm f/1.4 GM — muotokuvat",
-    "Sony 24-70mm f/2.8 GM II",
-    "DJI Mini 4 Pro — ilmakuvaus",
-    "Adobe Lightroom — editointi"
+    "Sony A7 IV – pääkamera",
+    "Sony 35 mm f/1.4 GM",
+    "Sony 85 mm f/1.4 GM – muotokuvat",
+    "Sony 24–70 mm f/2.8 GM II",
+    "DJI Mini 4 Pro – ilmakuvaus",
+    "Adobe Lightroom – kuvankäsittely"
   ],
   "gearNote": "Päivitän kalustoa säännöllisesti parhaan mahdollisen laadun varmistamiseksi.",
-  "authorBio": "Ammattivalokuvaaja Järvenpäästä. Erikoistunut hääkuvaukseen, muotokuvaukseen ja maisemakuvaukseen koko Suomessa. Yli viiden vuoden kokemus hääpäivien ikuistamisesta."
+  "authorBio": "Valokuvaaja Järvenpäästä. Kuvaan häitä, muotokuvia ja maisemia Keski-Uudellamaalla ja muualla Suomessa. Kokemusta yli viisi vuotta."
 }

@@ -27,7 +27,7 @@
 .form-submit {
   width: 100%; padding: 16px; background: var(--rose-hover); color: #fff;
   border: none; border-radius: 999px; cursor: pointer;
-  font-family: var(--font-label); font-size: .58rem;
+  font-family: var(--font-label); font-size:.69rem;
   letter-spacing: 2.5px; text-transform: uppercase;
   transition: background var(--t), transform var(--t), box-shadow var(--t);
 }
@@ -52,7 +52,7 @@
   width: 40px; height: 40px; min-width: 40px;
   background: var(--rose-dim); border: 1px solid var(--rose-border);
   border-radius: 10px; display: flex; align-items: center; justify-content: center;
-  color: var(--rose); margin-top: 2px;
+  color:var(--rose-text); margin-top: 2px;
 }
 .contact-row-label {
   font-family: var(--font-label); font-size: .69rem; letter-spacing: 2px;
@@ -62,7 +62,7 @@
   font-family: var(--font-display); font-style: italic;
   font-size: 1rem; color: var(--ink); transition: color var(--t);
 }
-.contact-row-val:hover { color: var(--rose); }
+.contact-row-val:hover { color:var(--rose-text); }
 
 .insta-block {
   margin-top: 28px; padding: 24px 28px;
@@ -70,12 +70,12 @@
   border: 1px solid var(--rose-border); border-radius: 14px;
   display: flex; align-items: center; gap: 16px;
 }
-.insta-block svg { color: var(--rose); flex-shrink: 0; }
+.insta-block svg { color:var(--rose-text); flex-shrink: 0; }
 .insta-block-text strong { display: block; font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--ink); margin-bottom: 4px; }
 .insta-block-text span { font-size: .8rem; color: var(--muted); font-weight: 300; }
 
 .response-note {
-  margin-top: 20px; font-family: var(--font-label); font-size: .55rem;
+  margin-top: 20px; font-family: var(--font-label); font-size:.69rem;
   letter-spacing: 1.5px; color: var(--muted); text-align: center;
 }
 
@@ -84,7 +84,7 @@
   .contact-info-card { padding: 32px 24px; }
 }
 
-.form-label .req { color: var(--rose); margin-left: 2px; }
+.form-label .req { color:var(--rose-text); margin-left: 2px; }
 .form-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-input[type="date"] { min-height: 49px; }
 .form-input[aria-invalid="true"], .form-select[aria-invalid="true"], .form-textarea[aria-invalid="true"] { border-color: #b0483a; }
@@ -109,7 +109,7 @@
 .form-thanks-ico {
   width: 48px; height: 48px; margin: 0 auto 24px;
   background: var(--rose-dim); border: 1px solid var(--rose-border);
-  border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--rose);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center; color:var(--rose-text);
 }
 .form-thanks-title { font-family: var(--font-display); font-style: italic; font-size: 1.9rem; line-height: 1.2; color: var(--ink); margin-bottom: 12px; }
 .form-thanks-title .hl { color: var(--rose); }

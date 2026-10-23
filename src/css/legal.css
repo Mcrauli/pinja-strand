@@ -6,9 +6,9 @@
 }
 .legal-body h2:first-child { margin-top: 0; }
 .legal-body h3 {
-  font-family: var(--font-label); font-size: .58rem; font-weight: 400;
+  font-family: var(--font-label); font-size:.69rem; font-weight: 400;
   letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--rose); margin: 32px 0 12px;
+  color:var(--rose-text); margin: 32px 0 12px;
 }
 .legal-body p, .legal-body li {
   font-size: .95rem; color: var(--muted); line-height: 1.85; font-weight: 300;

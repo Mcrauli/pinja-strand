@@ -3,40 +3,72 @@
     {
       "name": "Hääkuvaus",
       "tag": "Suosituin",
-      "description": "Kokonainen hääpäivä dokumentoituna — valmisteluista viimeiseen tanssiin. Luonnollinen, tunnelmallinen tyyli.",
-      "includes": ["Koko päivä kuvattuna (8–12h)", "300–500 editoitua kuvaa", "Online-galleria latausmahdollisuudella", "Valinnainen: valokuva-albumi"],
+      "description": "Koko hääpäivä taltioituna valmisteluista viimeiseen tanssiin. Luonnollinen ja tunnelmallinen tyyli.",
+      "includes": [
+        "Koko päivä kuvattuna (8–12 h)",
+        "300–500 viimeisteltyä kuvaa",
+        "Verkkogalleria, josta kuvat voi ladata",
+        "Valinnainen: valokuva-albumi"
+      ],
       "price": "alkaen 2 200 €",
       "priceNote": "Sisältää matkakustannukset Keski-Uudellamaalla"
     },
     {
       "name": "Muotokuvaus",
       "tag": "",
-      "description": "Perhe-, lapsi-, headshot- tai boudoir-kuvaukset. Rento tunnelma, aito lopputulos.",
-      "includes": ["1–2 tuntia kuvausaikaa", "25–40 editoitua kuvaa", "Online-galleria 30 päivää", "Yksi sijainti tai studio"],
+      "description": "Perhe-, lapsi-, yritys- ja boudoir-kuvaukset. Rento tunnelma ja aito lopputulos.",
+      "includes": [
+        "1–2 tuntia kuvausaikaa",
+        "25–40 viimeisteltyä kuvaa",
+        "Verkkogalleria 30 päivän ajan",
+        "Yksi kuvauspaikka tai studio"
+      ],
       "price": "alkaen 280 €",
-      "priceNote": "Lisähenkilöt +50€/hlö"
+      "priceNote": "Lisähenkilöt +50 €/hlö"
     },
     {
       "name": "Maisemakuvaus",
       "tag": "",
-      "description": "Suomen luonnon kauneus ikuistettuna — auringonnousuista revontuliin. Tilattuina tai valmiina printteinä.",
-      "includes": ["Tilattu kuvaussessio halutussa paikassa", "10–20 täysresoluutioista kuvaa", "Editointi ja värikorjaus", "Valinnainen: fine art print"],
+      "description": "Suomen luonnon kauneus taltioituna auringonnousuista revontuliin. Tilaustyönä tai valmiina vedoksina.",
+      "includes": [
+        "Kuvaus toivomassasi paikassa",
+        "10–20 täysresoluutioista kuvaa",
+        "Kuvankäsittely ja värikorjaus",
+        "Valinnainen: fine art -vedos"
+      ],
       "price": "alkaen 350 €",
-      "priceNote": "Matkakulut erikseen > 50km"
+      "priceNote": "Matkakulut lisätään, kun matkaa on yli 50 km"
     },
     {
       "name": "Fine Art Print",
       "tag": "",
-      "description": "Tasovedos seinällesi — kuvasta taidetta. Painettu laadukkaalle mattapaperille tai alumiinille.",
-      "includes": ["Kuvasta valmiiksi painettu teos", "Koot A3–A0", "Kehysvaihtoehto saatavilla", "Toimitus kotiin tai nouto"],
+      "description": "Taidevedos seinällesi. Painetaan laadukkaalle mattapaperille tai alumiinille.",
+      "includes": [
+        "Valmiiksi painettu teos",
+        "Koot A3–A0",
+        "Kehystys saatavilla",
+        "Toimitus kotiin tai nouto"
+      ],
       "price": "alkaen 90 €",
       "priceNote": "Hinta vaihtelee koon mukaan"
     }
   ],
   "faq": [
-    { "q": "Kuinka kauan kuvien editointi kestää?", "a": "Muotokuvaukset toimitaan 2–3 viikossa. Hääkuvaukset 4–6 viikossa. Kiireelliset toimitukset neuvotellaan erikseen." },
-    { "q": "Missä muodossa kuvat toimitetaan?", "a": "Korkearesoluutioisina JPEG-tiedostoina yksityisen online-gallerian kautta, josta voi ladata kaikki kuvat helposti." },
-    { "q": "Voiko kuvauspaikan valita itse?", "a": "Kyllä — mieluinen sijainti on aina tervetullut ehdotus. Voin myös suositella hyviä paikkoja Keski-Uudellamaalla ja pääkaupunkiseudulla." },
-    { "q": "Miten varaus tehdään?", "a": "Ota yhteyttä sähköpostilla tai lomakkeella. Varaus vahvistuu 30% ennakkomaksulla, loput maksetaan viikkoa ennen kuvausta." }
+    {
+      "q": "Kuinka nopeasti saan kuvat?",
+      "a": "Muotokuvat toimitetaan 2–3 viikossa ja hääkuvat 4–6 viikossa kuvauksesta. Nopeammasta toimituksesta voidaan sopia erikseen."
+    },
+    {
+      "q": "Missä muodossa kuvat toimitetaan?",
+      "a": "Korkearesoluutioisina JPEG-tiedostoina yksityisessä verkkogalleriassa, josta voit ladata kaikki kuvat."
+    },
+    {
+      "q": "Voinko valita kuvauspaikan itse?",
+      "a": "Totta kai. Omat toiveesi ovat aina tervetulleita, ja voin myös suositella hyviä paikkoja Keski-Uudeltamaalta ja pääkaupunkiseudulta."
+    },
+    {
+      "q": "Miten varaus tehdään?",
+      "a": "Ota yhteyttä lomakkeella tai sähköpostilla. Sovitaan yhdessä ajankohta ja sisältö, ja vahvistan varauksen sähköpostitse. Varausmaksua tai ennakkomaksua ei ole."
+    }
   ]
 }

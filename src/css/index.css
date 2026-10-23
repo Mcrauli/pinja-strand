@@ -27,7 +27,7 @@
 }
 .hero-content { position: relative; z-index: 1; padding-bottom: 80px; }
 .hero-eyebrow {
-  font-family: var(--font-label); font-size: .58rem;
+  font-family: var(--font-label); font-size:.69rem;
   letter-spacing: 4px; text-transform: uppercase;
   color: rgba(250,248,244,.55); margin-bottom: 20px;
   display: flex; align-items: center; gap: 14px;
@@ -44,7 +44,7 @@
 .hero-meta {
   margin-top: 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
 }
-.hero-genre { font-family: var(--font-label); font-size: .69rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,248,244,.38); }
+.hero-genre { font-family: var(--font-label); font-size: .69rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,248,244,.66); }
 .hero-sep { color: rgba(250,248,244,.18); }
 .hero-cta {
   margin-top: 40px;

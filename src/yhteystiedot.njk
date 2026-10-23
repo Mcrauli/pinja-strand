@@ -12,7 +12,7 @@ description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta t
     <div class="container">
       <div class="breadcrumb reveal"><a href="/index.html">Etusivu</a><span class="sep">/</span><span>Yhteystiedot</span></div>
       <h1 class="reveal d1">Otetaan <span class="hl">yhteyttä.</span></h1>
-      <p class="page-hero-sub reveal d2">Kerro unelmistasi — vastaan 24 tunnin sisällä.</p>
+      <p class="page-hero-sub reveal d2">Kerro, mistä haaveilet. Vastaan yleensä vuorokauden sisällä.</p>
     </div>
   </section>
 
@@ -47,7 +47,7 @@ description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta t
             <div class="form-group">
               <label class="form-label" for="palvelu">Mistä olet kiinnostunut?</label>
               <select class="form-select" id="palvelu" name="palvelu" aria-describedby="err-palvelu">
-                <option value="">Valitse palvelu...</option>
+                <option value="">Valitse palvelu</option>
                 {%- for s in palvelut.services %}
                 <option value="{{ s.name }}">{{ s.name }}</option>
                 {%- endfor %}
@@ -69,7 +69,7 @@ description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta t
             </div>
             <div class="form-group">
               <label class="form-label" for="viesti">Viesti <span class="req" aria-hidden="true">*</span></label>
-              <textarea class="form-textarea" id="viesti" name="viesti" placeholder="Kerro lyhyesti — milloin, missä, millaista tunnelmaa haet..." minlength="10" maxlength="5000" required aria-describedby="err-viesti"></textarea>
+              <textarea class="form-textarea" id="viesti" name="viesti" placeholder="Kerro lyhyesti, milloin ja missä kuvaus olisi ja millaista tunnelmaa toivot." minlength="10" maxlength="5000" required aria-describedby="err-viesti"></textarea>
               <p class="form-error" id="err-viesti"></p>
             </div>
             <div class="hp" aria-hidden="true">
@@ -78,7 +78,7 @@ description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta t
             <input type="hidden" name="t" id="formT" value="">
             <button type="submit" class="form-submit">Lähetä viesti</button>
             <p class="form-privacy">Käytän tietojasi vain yhteydenottoosi vastaamiseen. <a href="/tietosuoja.html">Tietosuojaseloste</a></p>
-            <p class="response-note">Vastataan 24 tunnin sisällä</p>
+            <p class="response-note">Vastaan yleensä vuorokauden sisällä</p>
           </form>
 
           <div class="form-thanks" id="formThanks" tabindex="-1" hidden>
@@ -86,7 +86,7 @@ description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta t
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6L9 17l-5-5"/></svg>
             </div>
             <div class="form-thanks-title">Kiitos, viestisi on <em class="hl">perillä.</em></div>
-            <p>Vastaan 24 tunnin sisällä.</p>
+            <p>Vastaan yleensä vuorokauden sisällä.</p>
           </div>
         </div>
 
@@ -126,7 +126,7 @@ description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta t
               </div>
               <div>
                 <div class="contact-row-label">Vasteaika</div>
-                <div class="contact-row-val" style="cursor:default;">24 tunnin sisällä</div>
+                <div class="contact-row-val" style="cursor:default;">Yleensä vuorokauden sisällä</div>
               </div>
             </div>
             <div class="contact-row">
@@ -148,7 +148,7 @@ description: Pinja Strand Photo — yhteystiedot. Ota yhteyttä kuvausvarausta t
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             <div class="insta-block-text">
               <strong>@{{ site.instagram }}</strong>
-              <span>Seuraa Instagramissa — päivittäin uusia kuvia</span>
+              <span>Uusimmat kuvat ja kuulumiset Instagramissa</span>
             </div>
           </a>
         </div>

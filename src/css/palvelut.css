@@ -16,8 +16,8 @@
 }
 .service-card:hover::before { background: var(--rose); }
 .service-num {
-  font-family: var(--font-label); font-size: .58rem; letter-spacing: 3px;
-  color: var(--rose); text-transform: uppercase; opacity: .6; margin-bottom: 20px;
+  font-family: var(--font-label); font-size:.69rem; letter-spacing: 3px;
+  color:var(--rose-text); text-transform: uppercase; margin-bottom: 20px;
 }
 .service-name {
   font-family: var(--font-display); font-style: italic;
@@ -50,12 +50,12 @@
 }
 .service-cta {
   margin-top: 28px; display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-label); font-size: .55rem; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--rose);
+  font-family: var(--font-label); font-size:.69rem; letter-spacing: 2px;
+  text-transform: uppercase; color:var(--rose-text);
   border-bottom: 1px solid var(--rose-border); padding-bottom: 4px;
   transition: border-color var(--t);
 }
-.service-cta:hover { border-color: var(--rose); }
+.service-cta:hover { border-color:var(--rose-text); }
 .service-cta svg { transition: transform .3s var(--ease); }
 .service-cta:hover svg { transform: translateX(4px); }
 
@@ -63,7 +63,7 @@
   display: inline-block; padding: 4px 12px; border-radius: 999px;
   font-family: var(--font-label); font-size: .69rem; letter-spacing: 2px;
   text-transform: uppercase; border: 1px solid var(--rose-border);
-  color: var(--rose); margin-bottom: 20px;
+  color:var(--rose-text); margin-bottom: 20px;
 }
 
 .faq-section { margin-top: 96px; }
